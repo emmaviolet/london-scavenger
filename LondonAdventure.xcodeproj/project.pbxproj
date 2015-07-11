@@ -8,16 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		462F459D1B4ECD1D00D5581F /* AdventureTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F459C1B4ECD1D00D5581F /* AdventureTabBarViewController.m */; };
-		462F45A11B4FC5DB00D5581F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A01B4FC5DB00D5581F /* LocationManager.m */; };
-		462F45A41B4FC61C00D5581F /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A31B4FC61C00D5581F /* Clue.m */; };
-		462F45A71B4FC62E00D5581F /* ClueOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A61B4FC62E00D5581F /* ClueOne.m */; };
-		462F45AA1B4FC63C00D5581F /* ClueTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A91B4FC63C00D5581F /* ClueTwo.m */; };
-		462F45AD1B4FC65300D5581F /* ClueThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45AC1B4FC65300D5581F /* ClueThree.m */; };
-		462F45B11B4FC66B00D5581F /* ClueFour.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B01B4FC66B00D5581F /* ClueFour.m */; };
-		462F45B41B4FC67800D5581F /* ClueFive.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B31B4FC67800D5581F /* ClueFive.m */; };
-		462F45B71B4FC68500D5581F /* ClueSix.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B61B4FC68500D5581F /* ClueSix.m */; };
-		462F45BA1B4FC69100D5581F /* ClueSeven.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B91B4FC69100D5581F /* ClueSeven.m */; };
-		462F45BD1B4FC6AC00D5581F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45BC1B4FC6AC00D5581F /* User.m */; };
 		466476D21B4D94560005DEF6 /* CoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466476D11B4D94560005DEF6 /* CoverViewController.m */; };
 		466476D51B4D97C40005DEF6 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466476D41B4D97C40005DEF6 /* IntroductionViewController.m */; };
 		469C42CC1B4DB75B008431C7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469C42CB1B4DB75B008431C7 /* HelpViewController.m */; };
@@ -47,26 +37,6 @@
 /* Begin PBXFileReference section */
 		462F459B1B4ECD1D00D5581F /* AdventureTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdventureTabBarViewController.h; sourceTree = "<group>"; };
 		462F459C1B4ECD1D00D5581F /* AdventureTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdventureTabBarViewController.m; sourceTree = "<group>"; };
-		462F459F1B4FC5DB00D5581F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
-		462F45A01B4FC5DB00D5581F /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
-		462F45A21B4FC61C00D5581F /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
-		462F45A31B4FC61C00D5581F /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
-		462F45A51B4FC62E00D5581F /* ClueOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueOne.h; sourceTree = "<group>"; };
-		462F45A61B4FC62E00D5581F /* ClueOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueOne.m; sourceTree = "<group>"; };
-		462F45A81B4FC63C00D5581F /* ClueTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueTwo.h; sourceTree = "<group>"; };
-		462F45A91B4FC63C00D5581F /* ClueTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueTwo.m; sourceTree = "<group>"; };
-		462F45AB1B4FC65300D5581F /* ClueThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueThree.h; sourceTree = "<group>"; };
-		462F45AC1B4FC65300D5581F /* ClueThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueThree.m; sourceTree = "<group>"; };
-		462F45AF1B4FC66B00D5581F /* ClueFour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueFour.h; sourceTree = "<group>"; };
-		462F45B01B4FC66B00D5581F /* ClueFour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueFour.m; sourceTree = "<group>"; };
-		462F45B21B4FC67700D5581F /* ClueFive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueFive.h; sourceTree = "<group>"; };
-		462F45B31B4FC67800D5581F /* ClueFive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueFive.m; sourceTree = "<group>"; };
-		462F45B51B4FC68500D5581F /* ClueSix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueSix.h; sourceTree = "<group>"; };
-		462F45B61B4FC68500D5581F /* ClueSix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueSix.m; sourceTree = "<group>"; };
-		462F45B81B4FC69100D5581F /* ClueSeven.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueSeven.h; sourceTree = "<group>"; };
-		462F45B91B4FC69100D5581F /* ClueSeven.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueSeven.m; sourceTree = "<group>"; };
-		462F45BB1B4FC6AC00D5581F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		462F45BC1B4FC6AC00D5581F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		466476D01B4D94560005DEF6 /* CoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverViewController.h; sourceTree = "<group>"; };
 		466476D11B4D94560005DEF6 /* CoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverViewController.m; sourceTree = "<group>"; };
 		466476D31B4D97C40005DEF6 /* IntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionViewController.h; sourceTree = "<group>"; };
@@ -126,33 +96,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		462F459E1B4FC5A500D5581F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				462F459F1B4FC5DB00D5581F /* LocationManager.h */,
-				462F45A01B4FC5DB00D5581F /* LocationManager.m */,
-				462F45A21B4FC61C00D5581F /* Clue.h */,
-				462F45A31B4FC61C00D5581F /* Clue.m */,
-				462F45A51B4FC62E00D5581F /* ClueOne.h */,
-				462F45A61B4FC62E00D5581F /* ClueOne.m */,
-				462F45A81B4FC63C00D5581F /* ClueTwo.h */,
-				462F45A91B4FC63C00D5581F /* ClueTwo.m */,
-				462F45AB1B4FC65300D5581F /* ClueThree.h */,
-				462F45AC1B4FC65300D5581F /* ClueThree.m */,
-				462F45AF1B4FC66B00D5581F /* ClueFour.h */,
-				462F45B01B4FC66B00D5581F /* ClueFour.m */,
-				462F45B21B4FC67700D5581F /* ClueFive.h */,
-				462F45B31B4FC67800D5581F /* ClueFive.m */,
-				462F45B51B4FC68500D5581F /* ClueSix.h */,
-				462F45B61B4FC68500D5581F /* ClueSix.m */,
-				462F45B81B4FC69100D5581F /* ClueSeven.h */,
-				462F45B91B4FC69100D5581F /* ClueSeven.m */,
-				462F45BB1B4FC6AC00D5581F /* User.h */,
-				462F45BC1B4FC6AC00D5581F /* User.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		469C42D01B4DB7E9008431C7 /* Clues */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +183,6 @@
 		46B97D071B4C5BE000C8367E /* LondonAdventure */ = {
 			isa = PBXGroup;
 			children = (
-				462F459E1B4FC5A500D5581F /* Models */,
 				469C42D61B4DBBF8008431C7 /* Storyboards */,
 				469C42D51B4DBBDA008431C7 /* Labels */,
 				469C42D11B4DB809008431C7 /* Help */,
@@ -335,17 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462F45BD1B4FC6AC00D5581F /* User.m in Sources */,
-				462F45AD1B4FC65300D5581F /* ClueThree.m in Sources */,
 				466476D21B4D94560005DEF6 /* CoverViewController.m in Sources */,
 				462F459D1B4ECD1D00D5581F /* AdventureTabBarViewController.m in Sources */,
-				462F45A71B4FC62E00D5581F /* ClueOne.m in Sources */,
-				462F45A41B4FC61C00D5581F /* Clue.m in Sources */,
-				462F45B41B4FC67800D5581F /* ClueFive.m in Sources */,
 				46B97D331B4D7B2500C8367E /* ClueTwoViewController.m in Sources */,
-				462F45B71B4FC68500D5581F /* ClueSix.m in Sources */,
-				462F45BA1B4FC69100D5581F /* ClueSeven.m in Sources */,
-				462F45B11B4FC66B00D5581F /* ClueFour.m in Sources */,
 				46FE6F061B4DC2900007AA71 /* HelpSixViewController.m in Sources */,
 				46B97D0D1B4C5BE000C8367E /* AppDelegate.m in Sources */,
 				46B97D0A1B4C5BE000C8367E /* main.m in Sources */,
@@ -354,7 +288,6 @@
 				466476D51B4D97C40005DEF6 /* IntroductionViewController.m in Sources */,
 				46B97D361B4D7B3300C8367E /* ClueThreeViewController.m in Sources */,
 				46ACC1641B4D85290018B77B /* MarginUILabel.m in Sources */,
-				462F45AA1B4FC63C00D5581F /* ClueTwo.m in Sources */,
 				46B97D3F1B4D7BBF00C8367E /* ClueSixViewController.m in Sources */,
 				46FE6F091B4DC29E0007AA71 /* HelpSevenViewController.m in Sources */,
 				46B97D241B4D715B00C8367E /* AdventureViewController.m in Sources */,
@@ -363,7 +296,6 @@
 				469C42CC1B4DB75B008431C7 /* HelpViewController.m in Sources */,
 				46FE6EFD1B4DC1E40007AA71 /* HelpThreeViewController.m in Sources */,
 				46B97D271B4D717500C8367E /* ClueSevenViewController.m in Sources */,
-				462F45A11B4FC5DB00D5581F /* LocationManager.m in Sources */,
 				46FE6F031B4DC2840007AA71 /* HelpFiveViewController.m in Sources */,
 				46B97D3C1B4D7BB200C8367E /* ClueFiveViewController.m in Sources */,
 				46FE6F001B4DC2710007AA71 /* HelpFourViewController.m in Sources */,

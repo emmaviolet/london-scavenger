@@ -26,6 +26,9 @@
 @property (nonatomic, strong) UIButton *eyeButton;
 
 @property (nonatomic, strong) NSTimer *locationTracker;
+@property (strong, nonatomic) IBOutlet MarginUILabel *contentLabel;
+
+@property (strong, nonatomic) NSString *contentText;
 
 @end
 
@@ -39,6 +42,8 @@
     [self createSwipeActions];
     [self createCompletedUI];
     [self checkIfCompleted];
+    
+    [self addContentLabel];
     
     [self setupLocationTracker];
     // Do any additional setup after loading the view.
@@ -64,6 +69,34 @@
     holdDown.minimumPressDuration = 1.0f;
     holdDown.allowableMovement = 100.0f;
     [self.view addGestureRecognizer:holdDown];
+}
+
+- (void)addContentLabel
+{
+    if (self.contentText)
+    {
+        NSString *str = self.contentText;
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
+    
+        NSShadow *shadow = [[NSShadow alloc] init];
+        [shadow setShadowColor:[UIColor lightGrayColor]];
+        [shadow setShadowOffset:CGSizeMake(-1, -1)];
+    
+        [attributedString addAttribute:NSShadowAttributeName
+                             value:shadow
+                             range:NSMakeRange(0, [attributedString length])];
+    
+        self.contentLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
+    
+        [self.contentLabel setAttributedText:attributedString];
+    
+        self.contentLabel.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:self.contentLabel];
+    
+        self.contentLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
+        self.contentLabel.opaque = YES;
+        self.contentLabel.font = [UIFont systemFontOfSize:20];
+    }
 }
 
 - (void)createSwipeActions

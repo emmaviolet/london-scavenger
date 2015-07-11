@@ -51,10 +51,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
-                                <mutableString key="text">Sorry, Daniel, I’m afraid I lied. I haven’t really been at Home House all day. Instead, I’ve ventured off into a little bit of London I don’t know very well, got terribly lost, and now I’m in need of rescuing.
+                                <string key="text">Sorry, Daniel, I’m afraid I lied. I haven’t really been at Home House all day. Instead, I’ve ventured off into a little bit of London I don’t know very well, got terribly lost, and now I’m in need of rescuing.
 
 I’ve decided you should get to know London a little better, so I’ve dropped a few clues around the area to help you come and find me.  There are a total of seven clues for you to pick up. The last one is optional, so feel free to skip it if you think you know where I am by then.  Each page of this app contains directions to one of the seven clues. When you get close, three things will happen:  1) A tick will appear on the left hand side of the title bar. This means that the app has registered that you've completed the clue!  2) A blue eye will appear on the right hand side of the title bar. You can click this eye if for whatever reason you aren't able to pick up the clue at the destination, and the app will show you what you missed. But watch out! It will only show you two clues, so after that you're on your own.  3) The directions to the next clue will be unlocked, and you'll be able to click on those directions in the navigation bar at the bottom of the screen, or by swiping left. 
-Don't worry, I want you to reach me! If all else fails, you can always call me. In the meantime, I suspect you will need some help from google to figure this out.  See you soon!</mutableString>
+Don't worry, I want you to reach me! If all else fails, you can always call me. In the meantime, I suspect you will need some help from google to figure this out.  See you soon!</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,19 +91,6 @@ Don't worry, I want you to reach me! If all else fails, you can always call me. 
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="-2" height="-2"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NDk-cv-Gan" customClass="MarginUILabel">
-                                <rect key="frame" x="20" y="114" width="728" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
-                                <string key="text">There is something waiting for you at Daunt Books to help you on your way. Just give them your name at the counter.   Daunt Books is one of London's greatest bookshops, and I think this branch is exceptionally beautiful. There's an amazing gallery in the back with endless travel books.
-
-Marylebone High Street is owned (as is most of Marylebone) by the Howard de Walden Estate, which is controlled in no small part by the four daughters of the Ninth Baron Howard de Walden, who famously like sushi and shoes (there's a lot of both on the High Street).  You'll want to take the scenic route through Manchester Square and past The Wallace Collection.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
