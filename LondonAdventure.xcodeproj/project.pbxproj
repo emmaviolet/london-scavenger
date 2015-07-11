@@ -7,28 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462F459D1B4ECD1D00D5581F /* AdventureTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F459C1B4ECD1D00D5581F /* AdventureTabBarViewController.m */; };
+		462F45A11B4FC5DB00D5581F /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A01B4FC5DB00D5581F /* LocationManager.m */; };
+		462F45A41B4FC61C00D5581F /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A31B4FC61C00D5581F /* Clue.m */; };
+		462F45A71B4FC62E00D5581F /* ClueOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A61B4FC62E00D5581F /* ClueOne.m */; };
+		462F45AA1B4FC63C00D5581F /* ClueTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45A91B4FC63C00D5581F /* ClueTwo.m */; };
+		462F45AD1B4FC65300D5581F /* ClueThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45AC1B4FC65300D5581F /* ClueThree.m */; };
+		462F45B11B4FC66B00D5581F /* ClueFour.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B01B4FC66B00D5581F /* ClueFour.m */; };
+		462F45B41B4FC67800D5581F /* ClueFive.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B31B4FC67800D5581F /* ClueFive.m */; };
+		462F45B71B4FC68500D5581F /* ClueSix.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B61B4FC68500D5581F /* ClueSix.m */; };
+		462F45BA1B4FC69100D5581F /* ClueSeven.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45B91B4FC69100D5581F /* ClueSeven.m */; };
+		462F45BD1B4FC6AC00D5581F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F45BC1B4FC6AC00D5581F /* User.m */; };
+		466476D21B4D94560005DEF6 /* CoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466476D11B4D94560005DEF6 /* CoverViewController.m */; };
+		466476D51B4D97C40005DEF6 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466476D41B4D97C40005DEF6 /* IntroductionViewController.m */; };
+		469C42CC1B4DB75B008431C7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469C42CB1B4DB75B008431C7 /* HelpViewController.m */; };
+		469C42CF1B4DB7DD008431C7 /* HelpOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469C42CE1B4DB7DD008431C7 /* HelpOneViewController.m */; };
+		469C42D41B4DB8A5008431C7 /* HelpTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469C42D31B4DB8A5008431C7 /* HelpTwoViewController.m */; };
+		46ACC1641B4D85290018B77B /* MarginUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ACC1631B4D85290018B77B /* MarginUILabel.m */; };
 		46B97D0A1B4C5BE000C8367E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D091B4C5BE000C8367E /* main.m */; };
 		46B97D0D1B4C5BE000C8367E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D0C1B4C5BE000C8367E /* AppDelegate.m */; };
-		46B97D101B4C5BE000C8367E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D0F1B4C5BE000C8367E /* FirstViewController.m */; };
-		46B97D131B4C5BE000C8367E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D121B4C5BE000C8367E /* SecondViewController.m */; };
 		46B97D161B4C5BE000C8367E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B97D141B4C5BE000C8367E /* Main.storyboard */; };
 		46B97D181B4C5BE000C8367E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B97D171B4C5BE000C8367E /* Assets.xcassets */; };
 		46B97D1B1B4C5BE000C8367E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B97D191B4C5BE000C8367E /* LaunchScreen.storyboard */; };
+		46B97D241B4D715B00C8367E /* AdventureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D231B4D715B00C8367E /* AdventureViewController.m */; };
+		46B97D271B4D717500C8367E /* ClueSevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D261B4D717500C8367E /* ClueSevenViewController.m */; };
+		46B97D2D1B4D7AFD00C8367E /* ClueOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D2C1B4D7AFD00C8367E /* ClueOneViewController.m */; };
+		46B97D331B4D7B2500C8367E /* ClueTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D321B4D7B2500C8367E /* ClueTwoViewController.m */; };
+		46B97D361B4D7B3300C8367E /* ClueThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D351B4D7B3300C8367E /* ClueThreeViewController.m */; };
+		46B97D391B4D7BA200C8367E /* ClueFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D381B4D7BA200C8367E /* ClueFourViewController.m */; };
+		46B97D3C1B4D7BB200C8367E /* ClueFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D3B1B4D7BB200C8367E /* ClueFiveViewController.m */; };
+		46B97D3F1B4D7BBF00C8367E /* ClueSixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D3E1B4D7BBF00C8367E /* ClueSixViewController.m */; };
+		46FE6EFD1B4DC1E40007AA71 /* HelpThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6EFC1B4DC1E40007AA71 /* HelpThreeViewController.m */; };
+		46FE6F001B4DC2710007AA71 /* HelpFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6EFF1B4DC2710007AA71 /* HelpFourViewController.m */; };
+		46FE6F031B4DC2840007AA71 /* HelpFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6F021B4DC2840007AA71 /* HelpFiveViewController.m */; };
+		46FE6F061B4DC2900007AA71 /* HelpSixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6F051B4DC2900007AA71 /* HelpSixViewController.m */; };
+		46FE6F091B4DC29E0007AA71 /* HelpSevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6F081B4DC29E0007AA71 /* HelpSevenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		462F459B1B4ECD1D00D5581F /* AdventureTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdventureTabBarViewController.h; sourceTree = "<group>"; };
+		462F459C1B4ECD1D00D5581F /* AdventureTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdventureTabBarViewController.m; sourceTree = "<group>"; };
+		462F459F1B4FC5DB00D5581F /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		462F45A01B4FC5DB00D5581F /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		462F45A21B4FC61C00D5581F /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
+		462F45A31B4FC61C00D5581F /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
+		462F45A51B4FC62E00D5581F /* ClueOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueOne.h; sourceTree = "<group>"; };
+		462F45A61B4FC62E00D5581F /* ClueOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueOne.m; sourceTree = "<group>"; };
+		462F45A81B4FC63C00D5581F /* ClueTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueTwo.h; sourceTree = "<group>"; };
+		462F45A91B4FC63C00D5581F /* ClueTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueTwo.m; sourceTree = "<group>"; };
+		462F45AB1B4FC65300D5581F /* ClueThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueThree.h; sourceTree = "<group>"; };
+		462F45AC1B4FC65300D5581F /* ClueThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueThree.m; sourceTree = "<group>"; };
+		462F45AF1B4FC66B00D5581F /* ClueFour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueFour.h; sourceTree = "<group>"; };
+		462F45B01B4FC66B00D5581F /* ClueFour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueFour.m; sourceTree = "<group>"; };
+		462F45B21B4FC67700D5581F /* ClueFive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueFive.h; sourceTree = "<group>"; };
+		462F45B31B4FC67800D5581F /* ClueFive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueFive.m; sourceTree = "<group>"; };
+		462F45B51B4FC68500D5581F /* ClueSix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueSix.h; sourceTree = "<group>"; };
+		462F45B61B4FC68500D5581F /* ClueSix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueSix.m; sourceTree = "<group>"; };
+		462F45B81B4FC69100D5581F /* ClueSeven.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueSeven.h; sourceTree = "<group>"; };
+		462F45B91B4FC69100D5581F /* ClueSeven.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueSeven.m; sourceTree = "<group>"; };
+		462F45BB1B4FC6AC00D5581F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		462F45BC1B4FC6AC00D5581F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		466476D01B4D94560005DEF6 /* CoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverViewController.h; sourceTree = "<group>"; };
+		466476D11B4D94560005DEF6 /* CoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverViewController.m; sourceTree = "<group>"; };
+		466476D31B4D97C40005DEF6 /* IntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionViewController.h; sourceTree = "<group>"; };
+		466476D41B4D97C40005DEF6 /* IntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionViewController.m; sourceTree = "<group>"; };
+		469C42CA1B4DB75B008431C7 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		469C42CB1B4DB75B008431C7 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		469C42CD1B4DB7DD008431C7 /* HelpOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpOneViewController.h; sourceTree = "<group>"; };
+		469C42CE1B4DB7DD008431C7 /* HelpOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpOneViewController.m; sourceTree = "<group>"; };
+		469C42D21B4DB8A5008431C7 /* HelpTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpTwoViewController.h; sourceTree = "<group>"; };
+		469C42D31B4DB8A5008431C7 /* HelpTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpTwoViewController.m; sourceTree = "<group>"; };
+		46ACC1621B4D85290018B77B /* MarginUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarginUILabel.h; sourceTree = "<group>"; };
+		46ACC1631B4D85290018B77B /* MarginUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarginUILabel.m; sourceTree = "<group>"; };
 		46B97D051B4C5BE000C8367E /* LondonAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LondonAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B97D091B4C5BE000C8367E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46B97D0B1B4C5BE000C8367E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		46B97D0C1B4C5BE000C8367E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		46B97D0E1B4C5BE000C8367E /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		46B97D0F1B4C5BE000C8367E /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		46B97D111B4C5BE000C8367E /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		46B97D121B4C5BE000C8367E /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		46B97D151B4C5BE000C8367E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46B97D171B4C5BE000C8367E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46B97D1A1B4C5BE000C8367E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46B97D1C1B4C5BE000C8367E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46B97D221B4D715B00C8367E /* AdventureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdventureViewController.h; sourceTree = "<group>"; };
+		46B97D231B4D715B00C8367E /* AdventureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdventureViewController.m; sourceTree = "<group>"; };
+		46B97D251B4D717500C8367E /* ClueSevenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueSevenViewController.h; sourceTree = "<group>"; };
+		46B97D261B4D717500C8367E /* ClueSevenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueSevenViewController.m; sourceTree = "<group>"; };
+		46B97D2B1B4D7AFD00C8367E /* ClueOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueOneViewController.h; sourceTree = "<group>"; };
+		46B97D2C1B4D7AFD00C8367E /* ClueOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueOneViewController.m; sourceTree = "<group>"; };
+		46B97D311B4D7B2500C8367E /* ClueTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueTwoViewController.h; sourceTree = "<group>"; };
+		46B97D321B4D7B2500C8367E /* ClueTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueTwoViewController.m; sourceTree = "<group>"; };
+		46B97D341B4D7B3300C8367E /* ClueThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueThreeViewController.h; sourceTree = "<group>"; };
+		46B97D351B4D7B3300C8367E /* ClueThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueThreeViewController.m; sourceTree = "<group>"; };
+		46B97D371B4D7BA200C8367E /* ClueFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueFourViewController.h; sourceTree = "<group>"; };
+		46B97D381B4D7BA200C8367E /* ClueFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueFourViewController.m; sourceTree = "<group>"; };
+		46B97D3A1B4D7BB200C8367E /* ClueFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueFiveViewController.h; sourceTree = "<group>"; };
+		46B97D3B1B4D7BB200C8367E /* ClueFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueFiveViewController.m; sourceTree = "<group>"; };
+		46B97D3D1B4D7BBF00C8367E /* ClueSixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClueSixViewController.h; sourceTree = "<group>"; };
+		46B97D3E1B4D7BBF00C8367E /* ClueSixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClueSixViewController.m; sourceTree = "<group>"; };
+		46FE6EFB1B4DC1E40007AA71 /* HelpThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpThreeViewController.h; sourceTree = "<group>"; };
+		46FE6EFC1B4DC1E40007AA71 /* HelpThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpThreeViewController.m; sourceTree = "<group>"; };
+		46FE6EFE1B4DC2710007AA71 /* HelpFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpFourViewController.h; sourceTree = "<group>"; };
+		46FE6EFF1B4DC2710007AA71 /* HelpFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpFourViewController.m; sourceTree = "<group>"; };
+		46FE6F011B4DC2840007AA71 /* HelpFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpFiveViewController.h; sourceTree = "<group>"; };
+		46FE6F021B4DC2840007AA71 /* HelpFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpFiveViewController.m; sourceTree = "<group>"; };
+		46FE6F041B4DC2900007AA71 /* HelpSixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpSixViewController.h; sourceTree = "<group>"; };
+		46FE6F051B4DC2900007AA71 /* HelpSixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpSixViewController.m; sourceTree = "<group>"; };
+		46FE6F071B4DC29E0007AA71 /* HelpSevenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpSevenViewController.h; sourceTree = "<group>"; };
+		46FE6F081B4DC29E0007AA71 /* HelpSevenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpSevenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +126,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462F459E1B4FC5A500D5581F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				462F459F1B4FC5DB00D5581F /* LocationManager.h */,
+				462F45A01B4FC5DB00D5581F /* LocationManager.m */,
+				462F45A21B4FC61C00D5581F /* Clue.h */,
+				462F45A31B4FC61C00D5581F /* Clue.m */,
+				462F45A51B4FC62E00D5581F /* ClueOne.h */,
+				462F45A61B4FC62E00D5581F /* ClueOne.m */,
+				462F45A81B4FC63C00D5581F /* ClueTwo.h */,
+				462F45A91B4FC63C00D5581F /* ClueTwo.m */,
+				462F45AB1B4FC65300D5581F /* ClueThree.h */,
+				462F45AC1B4FC65300D5581F /* ClueThree.m */,
+				462F45AF1B4FC66B00D5581F /* ClueFour.h */,
+				462F45B01B4FC66B00D5581F /* ClueFour.m */,
+				462F45B21B4FC67700D5581F /* ClueFive.h */,
+				462F45B31B4FC67800D5581F /* ClueFive.m */,
+				462F45B51B4FC68500D5581F /* ClueSix.h */,
+				462F45B61B4FC68500D5581F /* ClueSix.m */,
+				462F45B81B4FC69100D5581F /* ClueSeven.h */,
+				462F45B91B4FC69100D5581F /* ClueSeven.m */,
+				462F45BB1B4FC6AC00D5581F /* User.h */,
+				462F45BC1B4FC6AC00D5581F /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		469C42D01B4DB7E9008431C7 /* Clues */ = {
+			isa = PBXGroup;
+			children = (
+				46B97D221B4D715B00C8367E /* AdventureViewController.h */,
+				46B97D231B4D715B00C8367E /* AdventureViewController.m */,
+				466476D31B4D97C40005DEF6 /* IntroductionViewController.h */,
+				466476D41B4D97C40005DEF6 /* IntroductionViewController.m */,
+				46B97D2B1B4D7AFD00C8367E /* ClueOneViewController.h */,
+				46B97D2C1B4D7AFD00C8367E /* ClueOneViewController.m */,
+				46B97D251B4D717500C8367E /* ClueSevenViewController.h */,
+				46B97D261B4D717500C8367E /* ClueSevenViewController.m */,
+				46B97D311B4D7B2500C8367E /* ClueTwoViewController.h */,
+				46B97D321B4D7B2500C8367E /* ClueTwoViewController.m */,
+				46B97D341B4D7B3300C8367E /* ClueThreeViewController.h */,
+				46B97D351B4D7B3300C8367E /* ClueThreeViewController.m */,
+				46B97D371B4D7BA200C8367E /* ClueFourViewController.h */,
+				46B97D381B4D7BA200C8367E /* ClueFourViewController.m */,
+				46B97D3A1B4D7BB200C8367E /* ClueFiveViewController.h */,
+				46B97D3B1B4D7BB200C8367E /* ClueFiveViewController.m */,
+				46B97D3D1B4D7BBF00C8367E /* ClueSixViewController.h */,
+				46B97D3E1B4D7BBF00C8367E /* ClueSixViewController.m */,
+			);
+			name = Clues;
+			sourceTree = "<group>";
+		};
+		469C42D11B4DB809008431C7 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				469C42CA1B4DB75B008431C7 /* HelpViewController.h */,
+				469C42CB1B4DB75B008431C7 /* HelpViewController.m */,
+				469C42CD1B4DB7DD008431C7 /* HelpOneViewController.h */,
+				469C42CE1B4DB7DD008431C7 /* HelpOneViewController.m */,
+				469C42D21B4DB8A5008431C7 /* HelpTwoViewController.h */,
+				469C42D31B4DB8A5008431C7 /* HelpTwoViewController.m */,
+				46FE6EFB1B4DC1E40007AA71 /* HelpThreeViewController.h */,
+				46FE6EFC1B4DC1E40007AA71 /* HelpThreeViewController.m */,
+				46FE6EFE1B4DC2710007AA71 /* HelpFourViewController.h */,
+				46FE6EFF1B4DC2710007AA71 /* HelpFourViewController.m */,
+				46FE6F011B4DC2840007AA71 /* HelpFiveViewController.h */,
+				46FE6F021B4DC2840007AA71 /* HelpFiveViewController.m */,
+				46FE6F041B4DC2900007AA71 /* HelpSixViewController.h */,
+				46FE6F051B4DC2900007AA71 /* HelpSixViewController.m */,
+				46FE6F071B4DC29E0007AA71 /* HelpSevenViewController.h */,
+				46FE6F081B4DC29E0007AA71 /* HelpSevenViewController.m */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		469C42D51B4DBBDA008431C7 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				46ACC1621B4D85290018B77B /* MarginUILabel.h */,
+				46ACC1631B4D85290018B77B /* MarginUILabel.m */,
+			);
+			name = Labels;
+			sourceTree = "<group>";
+		};
+		469C42D61B4DBBF8008431C7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				466476D01B4D94560005DEF6 /* CoverViewController.h */,
+				466476D11B4D94560005DEF6 /* CoverViewController.m */,
+				46B97D141B4C5BE000C8367E /* Main.storyboard */,
+				46B97D191B4C5BE000C8367E /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		46B97CFC1B4C5BE000C8367E = {
 			isa = PBXGroup;
 			children = (
@@ -61,17 +240,18 @@
 		46B97D071B4C5BE000C8367E /* LondonAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				462F459E1B4FC5A500D5581F /* Models */,
+				469C42D61B4DBBF8008431C7 /* Storyboards */,
+				469C42D51B4DBBDA008431C7 /* Labels */,
+				469C42D11B4DB809008431C7 /* Help */,
+				469C42D01B4DB7E9008431C7 /* Clues */,
 				46B97D0B1B4C5BE000C8367E /* AppDelegate.h */,
 				46B97D0C1B4C5BE000C8367E /* AppDelegate.m */,
-				46B97D0E1B4C5BE000C8367E /* FirstViewController.h */,
-				46B97D0F1B4C5BE000C8367E /* FirstViewController.m */,
-				46B97D111B4C5BE000C8367E /* SecondViewController.h */,
-				46B97D121B4C5BE000C8367E /* SecondViewController.m */,
-				46B97D141B4C5BE000C8367E /* Main.storyboard */,
 				46B97D171B4C5BE000C8367E /* Assets.xcassets */,
-				46B97D191B4C5BE000C8367E /* LaunchScreen.storyboard */,
 				46B97D1C1B4C5BE000C8367E /* Info.plist */,
 				46B97D081B4C5BE000C8367E /* Supporting Files */,
+				462F459B1B4ECD1D00D5581F /* AdventureTabBarViewController.h */,
+				462F459C1B4ECD1D00D5581F /* AdventureTabBarViewController.m */,
 			);
 			path = LondonAdventure;
 			sourceTree = "<group>";
@@ -115,6 +295,7 @@
 				TargetAttributes = {
 					46B97D041B4C5BE000C8367E = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = JQMN9KB3LX;
 					};
 				};
 			};
@@ -154,10 +335,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46B97D131B4C5BE000C8367E /* SecondViewController.m in Sources */,
+				462F45BD1B4FC6AC00D5581F /* User.m in Sources */,
+				462F45AD1B4FC65300D5581F /* ClueThree.m in Sources */,
+				466476D21B4D94560005DEF6 /* CoverViewController.m in Sources */,
+				462F459D1B4ECD1D00D5581F /* AdventureTabBarViewController.m in Sources */,
+				462F45A71B4FC62E00D5581F /* ClueOne.m in Sources */,
+				462F45A41B4FC61C00D5581F /* Clue.m in Sources */,
+				462F45B41B4FC67800D5581F /* ClueFive.m in Sources */,
+				46B97D331B4D7B2500C8367E /* ClueTwoViewController.m in Sources */,
+				462F45B71B4FC68500D5581F /* ClueSix.m in Sources */,
+				462F45BA1B4FC69100D5581F /* ClueSeven.m in Sources */,
+				462F45B11B4FC66B00D5581F /* ClueFour.m in Sources */,
+				46FE6F061B4DC2900007AA71 /* HelpSixViewController.m in Sources */,
 				46B97D0D1B4C5BE000C8367E /* AppDelegate.m in Sources */,
-				46B97D101B4C5BE000C8367E /* FirstViewController.m in Sources */,
 				46B97D0A1B4C5BE000C8367E /* main.m in Sources */,
+				469C42D41B4DB8A5008431C7 /* HelpTwoViewController.m in Sources */,
+				46B97D391B4D7BA200C8367E /* ClueFourViewController.m in Sources */,
+				466476D51B4D97C40005DEF6 /* IntroductionViewController.m in Sources */,
+				46B97D361B4D7B3300C8367E /* ClueThreeViewController.m in Sources */,
+				46ACC1641B4D85290018B77B /* MarginUILabel.m in Sources */,
+				462F45AA1B4FC63C00D5581F /* ClueTwo.m in Sources */,
+				46B97D3F1B4D7BBF00C8367E /* ClueSixViewController.m in Sources */,
+				46FE6F091B4DC29E0007AA71 /* HelpSevenViewController.m in Sources */,
+				46B97D241B4D715B00C8367E /* AdventureViewController.m in Sources */,
+				469C42CF1B4DB7DD008431C7 /* HelpOneViewController.m in Sources */,
+				46B97D2D1B4D7AFD00C8367E /* ClueOneViewController.m in Sources */,
+				469C42CC1B4DB75B008431C7 /* HelpViewController.m in Sources */,
+				46FE6EFD1B4DC1E40007AA71 /* HelpThreeViewController.m in Sources */,
+				46B97D271B4D717500C8367E /* ClueSevenViewController.m in Sources */,
+				462F45A11B4FC5DB00D5581F /* LocationManager.m in Sources */,
+				46FE6F031B4DC2840007AA71 /* HelpFiveViewController.m in Sources */,
+				46B97D3C1B4D7BB200C8367E /* ClueFiveViewController.m in Sources */,
+				46FE6F001B4DC2710007AA71 /* HelpFourViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +478,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LondonAdventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = emmavioletmakinson.LondonAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -280,7 +491,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LondonAdventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = emmavioletmakinson.LondonAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -306,6 +519,7 @@
 				46B97D211B4C5BE000C8367E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
