@@ -8,6 +8,7 @@
 
 #import "ClueSixViewController.h"
 #import "MarginUILabel.h"
+#import "Clue6.h"
 
 @interface ClueSixViewController ()
 @property (nonatomic, retain) NSString *helpController;
@@ -27,29 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)helpController
+- (Clue6*)model
 {
-    return [NSString stringWithFormat:@"H6"];
-}
-
-- (NSString *)backgroundImageName
-{
-    return @"map6full.png";
-}
-
-- (NSNumber *)clueNumber
-{
-    return [NSNumber numberWithInt:6];
-}
-
-- (float)locationLat
-{
-    return 51.5140749;
-}
-
-- (float)locationLng
-{
-    return -0.1674053;
+    Clue6 *clue = [Clue6 new];
+    clue.viewController = self;
+    return clue;
 }
 
 /*

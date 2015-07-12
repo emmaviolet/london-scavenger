@@ -15,12 +15,6 @@
 
 @implementation Clue1
 
--(id)init
-{
-    self = [super init];
-    return self;
-}
-
 -(NSString *)contentText
 {
     NSString *para1 = @"There is something waiting for you at Daunt Books to help you on your way. Just give them your name at the counter.";
@@ -31,14 +25,32 @@
     return [NSString stringWithFormat:@"%@\r\r%@\r\r%@\r\r%@", para1, para2, para3, para4];
 }
 
-- (NSString *)helpController
+-(NSString *)helpText
 {
-    return [NSString stringWithFormat:@"H1"];
+    NSString *para1 = @"Oh no! Fortunately I've installed google maps on the iPad, so you should be able to manage without the guide, but you might want to pick up another copy of the Lonely Planet Pocket Guide to London if you can.";
+    NSString *para2 = @"You also missed one small clue: 01110100. Good luck!";
+    
+    return [NSString stringWithFormat:@"%@\r\r%@", para1, para2];
 }
+
+-(NSString *)titleText
+{
+    return [NSString stringWithFormat:@"Clue One"];
+}
+
+//- (NSString *)helpController
+//{
+//    return [NSString stringWithFormat:@"H1"];
+//}
 
 - (NSString *)backgroundImageName
 {
     return @"map1full.png";
+}
+
+- (NSString *)navBarImage
+{
+    return @"one-black.png";
 }
 
 - (NSNumber *)clueNumber

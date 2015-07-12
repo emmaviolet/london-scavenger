@@ -18,26 +18,26 @@
 }
 */
 
-- (id)initWithClueCount:(NSInteger)clueCount
+- (id)initWithClueCount:(NSInteger)clueCount andDelegateTo:(id)delegator
 {
     if (clueCount == 0)
     {
-        self = [super initWithTitle:@"Show Clue" message:@"Are you sure you would like to see this clue? You will only be able to see two." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        self = [super initWithTitle:@"Show Clue" message:@"Are you sure you would like to see this clue? You will only be able to see two." delegate:delegator cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     }
     if (clueCount == 1)
     {
-        self = [super initWithTitle:@"Show Clue" message:@"Are you sure you would like to see this clue? You can only see one more." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        self = [super initWithTitle:@"Show Clue" message:@"Are you sure you would like to see this clue? You can only see one more." delegate:delegator cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     }
     if (clueCount >= 2)
     {
-        self = [super initWithTitle:@"Show Clue" message:@"You have already seen two clues. I won't let you see any more!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        self = [super initWithTitle:@"Show Clue" message:@"You have already seen two clues. I won't let you see any more!" delegate:delegator cancelButtonTitle:@"OK" otherButtonTitles:nil];
     }
     return self;
 }
 
-- (id)initWithClueRepeated
+- (id)initWithClueRepeatedandDelegateTo:(id)delegator
 {
-    self = [super initWithTitle:@"Show Clue" message:@"You have already seen this clue, and may see it as many times as you like. Would you like to see it again?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    self = [super initWithTitle:@"Show Clue" message:@"You have already seen this clue, and may see it as many times as you like. Would you like to see it again?" delegate:delegator cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     return self;
 }
 

@@ -10,7 +10,8 @@
 
 @implementation MarginUILabel
 
-- (void)drawTextInRect:(CGRect)rect {
+- (void)drawTextInRect:(CGRect)rect
+{
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 8.0;
     self.numberOfLines = 0;
@@ -25,12 +26,20 @@
     self.textColor = [UIColor blackColor];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id)assignText:(NSString *)text
+{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    [shadow setShadowColor:[UIColor lightGrayColor]];
+    [shadow setShadowOffset:CGSizeMake(-1, -1)];
+    [attributedString addAttribute:NSShadowAttributeName
+                             value:shadow
+                             range:NSMakeRange(0, [attributedString length])];
+    
+    [self setAttributedText:attributedString];
+    self.textAlignment = NSTextAlignmentCenter;
+    return self;
 }
-*/
 
 @end

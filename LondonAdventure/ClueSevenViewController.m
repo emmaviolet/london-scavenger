@@ -8,6 +8,7 @@
 
 #import "ClueSevenViewController.h"
 #import "MarginUILabel.h"
+#import "Clue7.h"
 
 @interface ClueSevenViewController ()
 @property (nonatomic, retain) NSString *helpController;
@@ -27,31 +28,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)helpController
+- (Clue7*)model
 {
-    return [NSString stringWithFormat:@"H7"];
+    Clue7 *clue = [Clue7 new];
+    clue.viewController = self;
+    return clue;
 }
-
-- (NSString *)backgroundImageName
-{
-    return @"map7full.png";
-}
-
-- (NSNumber *)clueNumber
-{
-    return [NSNumber numberWithInt:7];
-}
-
-- (float)locationLat
-{
-    return 51.5136451;
-}
-
-- (float)locationLng
-{
-    return -0.1794191;
-}
-
 
 /*
 #pragma mark - Navigation

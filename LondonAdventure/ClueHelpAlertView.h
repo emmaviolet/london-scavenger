@@ -10,7 +10,7 @@
 
 @interface ClueHelpAlertView : UIAlertView
 
-- (id)initWithClueCount:(NSInteger)clueCount;
-- (id)initWithClueRepeated;
+- (id)initWithClueCount:(NSInteger)clueCount andDelegateTo:(id)delegator;
+- (id)initWithClueRepeatedandDelegateTo:(id)delegator;
 
 @end

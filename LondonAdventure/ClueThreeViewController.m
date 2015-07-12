@@ -8,6 +8,7 @@
 
 #import "ClueThreeViewController.h"
 #import "MarginUILabel.h"
+#import "Clue3.h"
 
 @interface ClueThreeViewController ()
 @property (nonatomic, retain) NSString *helpController;
@@ -27,30 +28,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)helpController
+- (Clue3*)model
 {
-    return [NSString stringWithFormat:@"H3"];
+    Clue3 *clue = [Clue3 new];
+    clue.viewController = self;
+    return clue;
 }
 
-- (NSString *)backgroundImageName
-{
-    return @"map3full.png";
-}
-
-- (NSNumber *)clueNumber
-{
-    return [NSNumber numberWithInt:3];
-}
-
-- (float)locationLat
-{
-    return 51.5194439;
-}
-
-- (float)locationLng
-{
-    return -0.1523374;
-}
 
 /*
 #pragma mark - Navigation

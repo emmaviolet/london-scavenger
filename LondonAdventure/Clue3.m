@@ -10,4 +10,29 @@
 
 @implementation Clue3
 
+- (NSString *)backgroundImageName
+{
+    return @"map3full.png";
+}
+
+- (NSString *)helpController
+{
+    return [NSString stringWithFormat:@"H3"];
+}
+
+- (NSNumber *)clueNumber
+{
+    return [NSNumber numberWithInt:3];
+}
+
+- (float)locationLat
+{
+    return 51.5194439;
+}
+
+- (float)locationLng
+{
+    return -0.1523374;
+}
+
 @end

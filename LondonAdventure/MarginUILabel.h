@@ -10,4 +10,6 @@
 
 @interface MarginUILabel : UILabel
 
+- (id)assignText:(NSString *)text;
+
 @end

@@ -10,6 +10,4 @@
 
 @interface Clue1 : Clue
 
--(id)init;
-
 @end

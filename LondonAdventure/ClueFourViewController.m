@@ -8,6 +8,7 @@
 
 #import "ClueFourViewController.h"
 #import "MarginUILabel.h"
+#import "Clue4.h"
 
 @interface ClueFourViewController ()
 @property (nonatomic, retain) NSString *helpController;
@@ -27,29 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)helpController
+- (Clue4*)model
 {
-    return [NSString stringWithFormat:@"H4"];
-}
-
-- (NSString *)backgroundImageName
-{
-    return @"map4full.png";
-}
-
-- (NSNumber *)clueNumber
-{
-    return [NSNumber numberWithInt:4];
-}
-
-- (float)locationLat
-{
-    return 51.5196925;
-}
-
-- (float)locationLng
-{
-    return -0.1601189;
+    Clue4 *clue = [Clue4 new];
+    clue.viewController = self;
+    return clue;
 }
 
 /*

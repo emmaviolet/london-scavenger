@@ -7,6 +7,7 @@
 //
 
 #import "IntroductionViewController.h"
+#import "Clue0.h"
 
 @interface IntroductionViewController ()
 
@@ -23,29 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)activeNavigationImage
-{
-    return @"info.png";
-}
-
-- (NSString *)inactiveNavigationImage
-{
-    return @"info.png";
-}
-
-- (NSString *)backgroundImageName
-{
-    return @"coverpage.png";
-}
-
-- (NSNumber *)clueNumber
-{
-    return [NSNumber numberWithInt:0];
-}
-
 - (int)resetDefaults
 {
     return TRUE;
+}
+
+- (Clue0*)model
+{
+    Clue0 *clue = [Clue0 new];
+    clue.viewController = self;
+    return clue;
 }
 
 

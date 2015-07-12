@@ -10,4 +10,14 @@
 
 @implementation Clue0
 
+- (NSString *)backgroundImageName
+{
+    return @"coverpage.png";
+}
+
+- (NSNumber *)clueNumber
+{
+    return [NSNumber numberWithInt:0];
+}
+
 @end

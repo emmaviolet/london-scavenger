@@ -8,6 +8,9 @@
 
 #import "AdventureTabBarViewController.h"
 #import "AdventureViewController.h"
+#import "ClueOneViewController.h"
+
+
 #import "User.h"
 
 @interface AdventureTabBarViewController ()
@@ -26,7 +29,10 @@
 -(void)instantiateViewControllers
 {
     AdventureViewController *viewController0 = [self.storyboard instantiateViewControllerWithIdentifier:@"C0"];
-    AdventureViewController *viewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"C1"];
+    
+    AdventureViewController *viewController1 = [[ClueOneViewController alloc] init];
+    
+//    AdventureViewController *viewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"C1"];
     AdventureViewController *viewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"C2"];
     AdventureViewController *viewController3 = [self.storyboard instantiateViewControllerWithIdentifier:@"C3"];
     AdventureViewController *viewController4 = [self.storyboard instantiateViewControllerWithIdentifier:@"C4"];
@@ -41,11 +47,13 @@
 {
     for (AdventureViewController *viewController in self.viewControllers) {
         
-        NSInteger nextViewNumber = [[viewController clueNumber] integerValue] + 1;
+        
+        
+        NSInteger nextViewNumber = [viewController.model.clueNumber integerValue] + 1;
         
         if (nextViewNumber <= 7)
         {
-            if ([User clueCompleted:viewController.clueNumber])
+            if ([User clueCompleted:viewController.model.clueNumber])
             { [[self.tabBar.items objectAtIndex:nextViewNumber] setEnabled:true]; }
             else
             { [[self.tabBar.items objectAtIndex:nextViewNumber] setEnabled:false]; }

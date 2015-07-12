@@ -15,29 +15,13 @@
 #import "User.h"
 
 @interface AdventureViewController ()
-@property (nonatomic, strong) NSString *backgroundImageName;
-@property (nonatomic, strong) NSString *helpController;
-@property (nonatomic, assign) float locationLat;
-@property (nonatomic, assign) float locationLng;
-
 @property (nonatomic, assign) int resetDefaults;
 @property (nonatomic, assign) int repeatingClue;
-
-@property (nonatomic, assign) NSNumber *clueNumber;
-
-@property (nonatomic, weak) MarginUILabel *titleLabel;
+@property (nonatomic, strong) MarginUILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *checkmark;
 @property (nonatomic, strong) UIButton *eyeButton;
-
-@property (nonatomic, strong) NSTimer *locationTracker;
-@property (nonatomic, strong) LocationTracker *locationManager;
-
 @property (strong, nonatomic) IBOutlet MarginUILabel *contentLabel;
-
-@property (strong, nonatomic) NSString *contentText;
-
-@property (strong, nonatomic) Clue *clueModel;
-
+@property (strong, nonatomic) IBOutlet MarginUILabel *helpLabel;
 @end
 
 @implementation AdventureViewController
@@ -46,12 +30,16 @@
     [super viewDidLoad];
     
     [self setBackgroundImage];
+    [self addTitleLabel];
+    [self addContentLabel];
+    [self createHelpLabel];
+    
     [self setHoldDownOption];
     [self createSwipeActions];
     [self createCompletedUI];
     [self checkIfCompleted];
-    [self addContentLabel];
-    [self setupLocationTracker];
+    
+    [self.model setupLocationTracker];
     // Do any additional setup after loading the view.
 }
 
@@ -62,7 +50,7 @@
 
 - (void)setBackgroundImage
 {
-    UIImage *backgroundImage = [UIImage imageNamed:self.backgroundImageName];
+    UIImage *backgroundImage = [UIImage imageNamed:self.model.backgroundImageName];
     UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
     backgroundImageView.image=backgroundImage;
     backgroundImageView.contentMode=UIViewContentModeScaleAspectFill;
@@ -79,29 +67,42 @@
 
 - (void)addContentLabel
 {
-    if (self.contentText)
+    if (self.model.contentText)
     {
-        NSString *str = self.contentText;
-        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
-    
-        NSShadow *shadow = [[NSShadow alloc] init];
-        [shadow setShadowColor:[UIColor lightGrayColor]];
-        [shadow setShadowOffset:CGSizeMake(-1, -1)];
-    
-        [attributedString addAttribute:NSShadowAttributeName
-                             value:shadow
-                             range:NSMakeRange(0, [attributedString length])];
-    
         self.contentLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
-    
-        [self.contentLabel setAttributedText:attributedString];
-    
-        self.contentLabel.textAlignment = NSTextAlignmentCenter;
+        [self.contentLabel assignText:self.model.contentText];
         [self.view addSubview:self.contentLabel];
     
         self.contentLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
         self.contentLabel.opaque = YES;
         self.contentLabel.font = [UIFont systemFontOfSize:20];
+    }
+}
+
+- (void)createHelpLabel
+{
+    if (self.model.helpText)
+    {
+        self.helpLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
+        [self.helpLabel assignText:self.model.helpText];
+        
+        self.helpLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
+        self.helpLabel.opaque = YES;
+        self.helpLabel.font = [UIFont systemFontOfSize:20];
+    }
+}
+
+- (void)addTitleLabel
+{
+    if (self.model.titleText)
+    {
+        self.titleLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 20, 728, 86)];
+        [self.titleLabel assignText:self.model.titleText];
+        [self.view addSubview:self.titleLabel];
+        
+        self.titleLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
+        self.titleLabel.opaque = YES;
+        self.titleLabel.font = [UIFont systemFontOfSize:60];
     }
 }
 
@@ -122,7 +123,7 @@
     if (selectedIndex < 7)
     {
         AdventureViewController *currentView = [self.tabBarController.viewControllers objectAtIndex:selectedIndex];
-        if ([User clueCompleted:currentView.clueNumber])
+        if ([User clueCompleted:currentView.model.clueNumber])
         {
             [self.tabBarController setSelectedIndex:(selectedIndex + 1)];
         }
@@ -138,14 +139,14 @@
 
 - (UIViewController *)instantiateHelpController
 {
-    if (self.helpController)
-    { return [self.storyboard instantiateViewControllerWithIdentifier:self.helpController]; }
+    if (self.model.helpController)
+    { return [self.storyboard instantiateViewControllerWithIdentifier:self.model.helpController]; }
     else { return nil; }
 }
 
 -(void)checkIfCompleted
 {
-    if ([User clueCompleted:self.clueNumber]) { [self completeClueUI]; }
+    if ([User clueCompleted:self.model.clueNumber]) { [self completeClueUI]; }
     else { [self incompleteClueUI]; }
 }
 
@@ -163,7 +164,7 @@
 
 - (void)completeClueUI
 {
-    if (self.helpController)
+    if (self.model.helpController || self.model.helpText)
     {
         [self.titleLabel addSubview:self.checkmark];
         [self.view addSubview:self.eyeButton];
@@ -172,7 +173,7 @@
 
 - (void)incompleteClueUI
 {
-    if (self.helpController)
+    if (self.model.helpController || self.model.helpText)
     {
         [self.checkmark removeFromSuperview];
         [self.eyeButton removeFromSuperview];
@@ -181,20 +182,28 @@
 
 - (void)eyeTap:(UIButton *)sender
 {
-    if (self.helpController && sender.state == UIGestureRecognizerStateBegan)
+    if (self.model.helpController && sender.state == UIGestureRecognizerStateBegan)
     {
-        if ([[User cluesSeen] containsObject:self.helpController])
+        if ([[User cluesSeen] containsObject:self.model.helpController])
         {
             self.repeatingClue = TRUE;
-            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueRepeated];
+            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueRepeatedandDelegateTo:self];
             [alertView show];
         }
         else
         {
             self.repeatingClue = FALSE;
-            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:[User cluesSeenCount]];
+            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:[User cluesSeenCount] andDelegateTo:self];
             [alertView show];
         }
+    }
+    
+    if (!self.model.helpController && sender.state == UIGestureRecognizerStateBegan)
+    {
+
+        self.repeatingClue = FALSE;
+        ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:0 andDelegateTo:self];
+        [alertView show];
     }
 }
 
@@ -202,9 +211,7 @@
 {
     NSUInteger nextIndex = [self.tabBarController selectedIndex] + 1;
     if (nextIndex <= 7)
-    {
-        [[[[self.tabBarController tabBar] items] objectAtIndex:nextIndex] setEnabled:true];
-    }
+    { [[[[self.tabBarController tabBar] items] objectAtIndex:nextIndex] setEnabled:true]; }
 }
 
 - (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
@@ -216,56 +223,39 @@
         [self.tabBarController viewDidLoad];
     }
     
-    if (self.helpController && sender.state == UIGestureRecognizerStateBegan)
+    if (self.model.helpController && sender.state == UIGestureRecognizerStateBegan)
     {
-        [self clueCompleteProcess];
+        [self.model clueCompleteProcess];
+        [self completeClueUI];
+        [self activateNextTab];
     }
-}
-
-- (void)clueCompleteProcess
-{
-    [User completeClue:self.clueNumber];
-    [self completeClueUI];
-    [self activateNextTab];
-    [self stopLocationTracker];
+    
+    if (self.model.helpText && sender.state == UIGestureRecognizerStateBegan)
+    {
+        [self.model clueCompleteProcess];
+        [self completeClueUI];
+        [self activateNextTab];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1)
     {
-        if (!self.repeatingClue) { [User addClueToCluesSeen:self.helpController]; }
-        [self presentViewController:self.instantiateHelpController animated:YES completion:nil];
+        if (self.model.helpController)
+        {
+            if (!self.repeatingClue)
+            { [User addClueToCluesSeen:self.model.helpController]; }
+            [self presentViewController:self.instantiateHelpController animated:YES completion:nil];
+        }
+        if (self.model.helpText)
+        {
+//            if (!self.repeatingClue)
+//            { [User addClueToCluesSeen:self.model.clueNumber]; }
+            [self.contentLabel removeFromSuperview];
+            [self.view addSubview:self.helpLabel];
+        }
     }
-}
-
--(void)setupLocationTracker
-{
-    if (self.locationLat && self.locationLng && ![User clueCompleted:self.clueNumber])
-    {
-        self.locationTracker = [NSTimer scheduledTimerWithTimeInterval:10.0
-                                target:self
-                                selector:@selector(CurrentLocationIdentifier)
-                                userInfo:nil
-                                repeats:YES];
-    }
-    
-}
-
--(void)stopLocationTracker
-{
-    [self.locationTracker invalidate];
-    self.locationTracker = nil;
-}
-
--(void)CurrentLocationIdentifier
-{ self.locationManager = [[LocationTracker alloc] initWithViewController:self]; }
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    [self.locationManager stopUpdatingLocation];
-    if ([self.locationManager reachedLocationWithLatitude:self.locationLat andLongitude:self.locationLng])
-    { [self clueCompleteProcess]; }
 }
 
 @end

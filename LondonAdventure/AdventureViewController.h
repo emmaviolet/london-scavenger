@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Clue.h"
+
+//@class Clue;
 
 @interface AdventureViewController : UIViewController<CLLocationManagerDelegate>
 
@@ -16,7 +19,10 @@
     CLLocation *currentLocation;
 }
 
--(NSNumber *)clueNumber;
+@property (strong, nonatomic) Clue *model;
+
 -(void)checkIfCompleted;
+-(void)completeClueUI;
 
 @end
+                                                                                

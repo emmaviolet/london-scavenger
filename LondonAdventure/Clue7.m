@@ -10,4 +10,29 @@
 
 @implementation Clue7
 
+- (NSString *)backgroundImageName
+{
+    return @"map7full.png";
+}
+
+- (NSString *)helpController
+{
+    return [NSString stringWithFormat:@"H7"];
+}
+
+- (NSNumber *)clueNumber
+{
+    return [NSNumber numberWithInt:7];
+}
+
+- (float)locationLat
+{
+    return 51.5136451;
+}
+
+- (float)locationLng
+{
+    return -0.1794191;
+}
+
 @end

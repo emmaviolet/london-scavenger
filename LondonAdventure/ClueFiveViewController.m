@@ -8,6 +8,7 @@
 
 #import "ClueFiveViewController.h"
 #import "MarginUILabel.h"
+#import "Clue5.h"
 
 @interface ClueFiveViewController ()
 @property (nonatomic, retain) NSString *helpController;
@@ -27,29 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)helpController
+- (Clue5*)model
 {
-    return [NSString stringWithFormat:@"H5"];
-}
-
-- (NSString *)backgroundImageName
-{
-    return @"map5full.png";
-}
-
-- (NSNumber *)clueNumber
-{
-    return [NSNumber numberWithInt:5];
-}
-
-- (float)locationLat
-{
-    return 51.5190898;
-}
-
-- (float)locationLng
-{
-    return -0.1691343;
+    Clue5 *clue = [Clue5 new];
+    clue.viewController = self;
+    return clue;
 }
 
 /*

@@ -8,6 +8,7 @@
 
 #import "ClueTwoViewController.h"
 #import "MarginUILabel.h"
+#import "Clue2.h"
 
 @interface ClueTwoViewController ()
 @property (nonatomic, retain) NSString *helpController;
@@ -27,29 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)helpController
+- (Clue2*)model
 {
-    return [NSString stringWithFormat:@"H2"];
-}
-
-- (NSString *)backgroundImageName
-{
-    return @"map2full.png";
-}
-
-- (NSNumber *)clueNumber
-{
-    return [NSNumber numberWithInt:2];
-}
-
-- (float)locationLat
-{
-    return 51.5197492;
-}
-
-- (float)locationLng
-{
-    return -0.152225;
+    Clue2 *clue = [Clue2 new];
+    clue.viewController = self;
+    return clue;
 }
 
 /*
