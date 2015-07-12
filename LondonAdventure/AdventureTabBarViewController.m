@@ -8,6 +8,7 @@
 
 #import "AdventureTabBarViewController.h"
 #import "AdventureViewController.h"
+#import "User.h"
 
 @interface AdventureTabBarViewController ()
 @end
@@ -44,7 +45,7 @@
         
         if (nextViewNumber <= 7)
         {
-            if (viewController.clueComplete)
+            if ([User clueCompleted:viewController.clueNumber])
             { [[self.tabBar.items objectAtIndex:nextViewNumber] setEnabled:true]; }
             else
             { [[self.tabBar.items objectAtIndex:nextViewNumber] setEnabled:false]; }

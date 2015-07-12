@@ -18,6 +18,5 @@
 
 -(NSNumber *)clueNumber;
 -(void)checkIfCompleted;
--(BOOL)clueComplete;
 
 @end

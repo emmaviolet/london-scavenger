@@ -6,9 +6,13 @@
 //  Copyright © 2015 Emma Makinson. All rights reserved.
 //
 
-#import "AdventureViewController.h"
 #import "AdventureTabBarViewController.h"
+#import "AdventureViewController.h"
+#import "Clue.h"
+#import "ClueHelpAlertView.h"
+#import "LocationTracker.h"
 #import "MarginUILabel.h"
+#import "User.h"
 
 @interface AdventureViewController ()
 @property (nonatomic, strong) NSString *backgroundImageName;
@@ -26,9 +30,13 @@
 @property (nonatomic, strong) UIButton *eyeButton;
 
 @property (nonatomic, strong) NSTimer *locationTracker;
+@property (nonatomic, strong) LocationTracker *locationManager;
+
 @property (strong, nonatomic) IBOutlet MarginUILabel *contentLabel;
 
 @property (strong, nonatomic) NSString *contentText;
+
+@property (strong, nonatomic) Clue *clueModel;
 
 @end
 
@@ -42,9 +50,7 @@
     [self createSwipeActions];
     [self createCompletedUI];
     [self checkIfCompleted];
-    
     [self addContentLabel];
-    
     [self setupLocationTracker];
     // Do any additional setup after loading the view.
 }
@@ -116,7 +122,7 @@
     if (selectedIndex < 7)
     {
         AdventureViewController *currentView = [self.tabBarController.viewControllers objectAtIndex:selectedIndex];
-        if (currentView.clueComplete)
+        if ([User clueCompleted:currentView.clueNumber])
         {
             [self.tabBarController setSelectedIndex:(selectedIndex + 1)];
         }
@@ -137,43 +143,10 @@
     else { return nil; }
 }
 
-- (BOOL)clueComplete
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults arrayForKey:@"cluesComplete"])
-    {
-        NSArray *completeCluesArray = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
-        [defaults setObject:completeCluesArray forKey:@"cluesComplete"];
-    }
-
-    NSArray *cluesComplete = [defaults arrayForKey:@"cluesComplete"];
-    NSMutableArray *completeClues = [NSMutableArray arrayWithArray:cluesComplete];
-    return [completeClues containsObject:self.clueNumber];
-}
-
 -(void)checkIfCompleted
 {
-    if ([self clueComplete]) { [self completeClueUI]; }
+    if ([User clueCompleted:self.clueNumber]) { [self completeClueUI]; }
     else { [self incompleteClueUI]; }
-}
-
-- (void)setClueCompleted
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults arrayForKey:@"cluesComplete"])
-    {
-        NSArray *completeCluesArray = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
-        [defaults setObject:completeCluesArray forKey:@"cluesComplete"];
-    }
-    
-    NSArray *cluesComplete = [defaults arrayForKey:@"cluesComplete"];
-    NSMutableArray *newCluesComplete = [NSMutableArray arrayWithArray:cluesComplete];
-    
-    [newCluesComplete addObject:self.clueNumber];
-    NSArray *cluesCompleteTwo = [newCluesComplete copy];
-    
-    [defaults setObject:cluesCompleteTwo forKey:@"cluesComplete"];
-    [defaults synchronize];
 }
 
 - (void)createCompletedUI
@@ -208,38 +181,19 @@
 
 - (void)eyeTap:(UIButton *)sender
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger cluesSeenCount = [defaults integerForKey:@"cluesSeenCount"];
-    NSArray *cluesSeen = [defaults arrayForKey:@"cluesSeen"];
-    
-    BOOL clueAlreadySeen = [cluesSeen containsObject:self.helpController];
-    
     if (self.helpController && sender.state == UIGestureRecognizerStateBegan)
     {
-        if (clueAlreadySeen)
+        if ([[User cluesSeen] containsObject:self.helpController])
         {
             self.repeatingClue = TRUE;
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Show Clue" message:@"You have already seen this clue, and may see it as many times as you like. Would you like to see it again?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueRepeated];
             [alertView show];
         }
         else
         {
             self.repeatingClue = FALSE;
-            if (cluesSeenCount == 0)
-            {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Show Clue" message:@"Are you sure you would like to see this clue? You will only be able to see two." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-                [alertView show];
-            }
-            if (cluesSeenCount == 1)
-            {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Show Clue" message:@"Are you sure you would like to see this clue? You can only see one more." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-                [alertView show];
-            }
-            if (cluesSeenCount >= 2)
-            {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Show Clue" message:@"You have already seen two clues. I won't let you see any more!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alertView show];
-            }
+            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:[User cluesSeenCount]];
+            [alertView show];
         }
     }
 }
@@ -270,7 +224,7 @@
 
 - (void)clueCompleteProcess
 {
-    [self setClueCompleted];
+    [User completeClue:self.clueNumber];
     [self completeClueUI];
     [self activateNextTab];
     [self stopLocationTracker];
@@ -278,30 +232,16 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger cluesSeenCount = [defaults integerForKey:@"cluesSeenCount"];
-    NSInteger newCluesSeenCount = cluesSeenCount + 1;
-    NSArray *cluesSeen = [defaults arrayForKey:@"cluesSeen"];
-    NSMutableArray *newCluesSeen = [NSMutableArray arrayWithArray:cluesSeen];
-
     if (buttonIndex == 1)
     {
-        if (!self.repeatingClue)
-        {
-            [newCluesSeen addObject:self.helpController];
-            NSArray *cluesSeen = [newCluesSeen copy];
-            
-            [defaults setObject:cluesSeen forKey:@"cluesSeen"];
-            [defaults setInteger:newCluesSeenCount forKey:@"cluesSeenCount"];
-            [defaults synchronize];
-        }
+        if (!self.repeatingClue) { [User addClueToCluesSeen:self.helpController]; }
         [self presentViewController:self.instantiateHelpController animated:YES completion:nil];
     }
 }
 
 -(void)setupLocationTracker
 {
-    if (self.locationLat && self.locationLng && !self.clueComplete)
+    if (self.locationLat && self.locationLng && ![User clueCompleted:self.clueNumber])
     {
         self.locationTracker = [NSTimer scheduledTimerWithTimeInterval:10.0
                                 target:self
@@ -319,43 +259,13 @@
 }
 
 -(void)CurrentLocationIdentifier
-{
-    locationManager = [CLLocationManager new];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startUpdatingLocation];
-}
+{ self.locationManager = [[LocationTracker alloc] initWithViewController:self]; }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [locationManager stopUpdatingLocation];
-    CLLocation *location = [locationManager location];
-     {
-         float longitude = location.coordinate.longitude;
-         float latitude = location.coordinate.latitude;
-         
-         float lngDistance = fabsf(longitude - self.locationLng);
-         float latDistance = fabsf(latitude - self.locationLat);
-         
-         float allowableDifference = 0.0005;
-         
-         if (latDistance < allowableDifference && lngDistance < allowableDifference)
-         {
-             [self clueCompleteProcess];
-         }
-     }
+    [self.locationManager stopUpdatingLocation];
+    if ([self.locationManager reachedLocationWithLatitude:self.locationLat andLongitude:self.locationLng])
+    { [self clueCompleteProcess]; }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
