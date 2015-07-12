@@ -4,11 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--Introduction View Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -17,27 +12,10 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" id="A5M-7J-77L" customClass="MarginUILabel">
-                                <rect key="frame" x="20" y="114" width="728" height="802"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <string key="text">Sorry, Daniel, I’m afraid I lied. I haven’t really been at Home House all day. Instead, I’ve ventured off into a little bit of London I don’t know very well, got terribly lost, and now I’m in need of rescuing.
-
-I’ve decided you should get to know London a little better, so I’ve dropped a few clues around the area to help you come and find me.  There are a total of seven clues for you to pick up. The last one is optional, so feel free to skip it if you think you know where I am by then.  Each page of this app contains directions to one of the seven clues. When you get close, three things will happen:  1) A tick will appear on the left hand side of the title bar. This means that the app has registered that you've completed the clue!  2) A blue eye will appear on the right hand side of the title bar. You can click this eye if for whatever reason you aren't able to pick up the clue at the destination, and the app will show you what you missed. But watch out! It will only show you two clues, so after that you're on your own.  3) The directions to the next clue will be unlocked, and you'll be able to click on those directions in the navigation bar at the bottom of the screen, or by swiping left. 
-Don't worry, I want you to reach me! If all else fails, you can always call me. In the meantime, I suspect you will need some help from google to figure this out.  See you soon!</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="shadowOffset" width="-1" height="-1"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="info" id="acW-dT-cKf">
+                    <tabBarItem key="tabBarItem" title="" id="acW-dT-cKf">
                         <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                 </viewController>
@@ -64,7 +42,4 @@ Don't worry, I want you to reach me! If all else fails, you can always call me. 
             <point key="canvasLocation" x="36" y="28"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="info" width="48" height="48"/>
-    </resources>
 </document>

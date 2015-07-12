@@ -17,4 +17,7 @@
 + (BOOL)clueCompleted:(NSNumber *)clueNumber;
 + (void)completeClue:(NSNumber *)clueNumber;
 
++ (void)addStartTime:(NSDate*)startTime;
++ (id)startTime;
+
 @end

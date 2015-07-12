@@ -12,5 +12,6 @@
 
 - (id)initWithViewController:(id)viewController;
 - (BOOL)reachedLocationWithLatitude:(float)latitude andLongitude:(float)longitude;
+- (NSInteger)distanceFromMe;
 
 @end

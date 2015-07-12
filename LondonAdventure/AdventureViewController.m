@@ -13,6 +13,7 @@
 #import "LocationTracker.h"
 #import "MarginUIImageView.h"
 #import "MarginUILabel.h"
+#import "ScaledImage.h"
 #import "User.h"
 
 @import GoogleMaps;
@@ -27,8 +28,17 @@
 @property (strong, nonatomic) IBOutlet MarginUILabel *helpLabel;
 
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
-@property (strong, nonatomic) IBOutlet MarginUIImageView *imageSubView;
+@property (strong, nonatomic) IBOutlet MarginUILabel *helpImageLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *helpImageView;
 
+@property (nonatomic, strong) NSTimer *locationTracker;
+@property (nonatomic, strong) LocationTracker *locationManager;
+
+@property (strong, nonatomic) IBOutlet MarginUILabel *timerLabel;
+@property (strong, nonatomic) IBOutlet MarginUILabel *distanceLabel;
+
+@property (strong, nonatomic) NSTimer *countdownTimer;
+@property (strong, nonatomic) NSTimer *distanceTracker;
 @end
 
 @implementation AdventureViewController
@@ -44,15 +54,20 @@
     [self addTitleLabel];
     [self addContentLabel];
     [self addGoogleMap];
+    [self addTimer];
+    [self timeSinceStart];
     
-    [self createHelpLabel];
+    [self addTracker];
+    
+    [self createHelpViews];
     
     [self setHoldDownOption];
     [self createSwipeActions];
     [self createCompletedUI];
     [self checkIfCompleted];
     
-    [self.model setupLocationTracker];
+    [self setupCountdownTimer];
+    [self setupLocationTracker];
     // Do any additional setup after loading the view.
 }
 
@@ -88,7 +103,7 @@
 
 - (void)addGoogleMap
 {
-    CGRect viewRect = CGRectMake(20, 522, 728, 358);
+    CGRect viewRect = CGRectMake(20, 522, 728, 398);
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.model.locationLat
                                                             longitude:self.model.locationLng
                                                                  zoom:15];
@@ -108,11 +123,18 @@
     marker.map = self.mapView;
 }
 
-- (void)createHelpLabel
+- (void)createHelpViews
 {
     self.helpLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
     [self.helpLabel assignText:self.model.helpText];
     [self.helpLabel setFontSize:20];
+    
+    self.helpImageLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 522, 728, 398)];
+    [self.helpImageLabel setFontSize:20];
+    
+    self.helpImageView = [[UIImageView alloc]initWithFrame:CGRectMake(25, 527, 718, 388)];
+    self.helpImageView.image = [UIImage imageNamed:self.model.helpImage];
+    self.helpImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)addTitleLabel
@@ -137,7 +159,7 @@
 - (IBAction)tappedRightButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-    if (selectedIndex < 7)
+    if (selectedIndex < [self.tabBarController.viewControllers count] - 1)
     {
         AdventureViewController *currentView = [self.tabBarController.viewControllers objectAtIndex:selectedIndex];
         if ([User clueCompleted:currentView.model.clueNumber])
@@ -190,6 +212,9 @@
     {
         [self.helpLabel removeFromSuperview];
         [self.view addSubview:self.contentLabel];
+        [self.helpImageLabel removeFromSuperview];
+        [self.helpImageView removeFromSuperview];
+        [self.view addSubview:self.mapView];
     }
     else
     {
@@ -197,8 +222,7 @@
         {
             if ([[User cluesSeen] containsObject:self.model.clueNumber])
             {
-                [self.contentLabel removeFromSuperview];
-                [self.view addSubview:self.helpLabel];
+                [self loadHelpView];
             }
             else
             {
@@ -212,24 +236,15 @@
 - (void)activateNextTab
 {
     NSUInteger nextIndex = [self.tabBarController selectedIndex] + 1;
-    if (nextIndex <= 7)
+    if (nextIndex <= [self.tabBarController.viewControllers count] - 1)
     { [[[[self.tabBarController tabBar] items] objectAtIndex:nextIndex] setEnabled:true]; }
 }
 
 - (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
 {
-    if (self.resetDefaults && sender.state == UIGestureRecognizerStateBegan)
-    {
-        NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
-        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
-        [self.tabBarController viewDidLoad];
-    }
-    if (self.model.helpText && sender.state == UIGestureRecognizerStateBegan)
-    {
-        [self.model clueCompleteProcess];
-        [self completeClueUI];
-        [self activateNextTab];
-    }
+    [self.model clueCompleteProcess];
+    [self completeClueUI];
+    [self activateNextTab];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -237,9 +252,102 @@
     if (buttonIndex == 1)
     {
         { [User addClueToCluesSeen:self.model.clueNumber]; }
-        [self.contentLabel removeFromSuperview];
-        [self.view addSubview:self.helpLabel];
+        [self loadHelpView];
     }
 }
+
+- (void)loadHelpView
+{
+    [self.contentLabel removeFromSuperview];
+    [self.view addSubview:self.helpLabel];
+    [self.mapView removeFromSuperview];
+    [self.view insertSubview:self.helpImageLabel atIndex:1];
+    [self.view insertSubview:self.helpImageView atIndex:2];
+}
+
+-(void)addTimer
+{
+    self.timerLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 928, 180, 40)];
+    [self.view addSubview:self.timerLabel];
+    [self.timerLabel setFontSize:20];
+}
+
+-(void)addTracker
+{
+    self.distanceLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(568, 928, 180, 40)];
+    [self.view addSubview:self.distanceLabel];
+    [self.distanceLabel setFontSize:20];
+}
+
+-(void)setupCountdownTimer
+{
+    self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                           target:self
+                                                         selector:@selector(timeSinceStart)
+                                                         userInfo:nil
+                                                          repeats:YES];
+}
+
+-(void)timeSinceStart
+{
+    NSDate *currentTime = [NSDate date];
+    NSDate *startTime = [User startTime];
+    
+    if (startTime)
+    {
+        NSTimeInterval intervalNow = [currentTime timeIntervalSince1970];
+        NSTimeInterval intervalStart = [startTime timeIntervalSince1970];
+        NSInteger timeNow = round(intervalNow);
+        NSInteger timeStart = round(intervalStart);
+        NSInteger timePassed = timeNow - timeStart;
+        NSInteger timeRemaining = 5400 - timePassed;
+        NSInteger minutesRemaining = timeRemaining / 60;
+        NSInteger secondsRemaining = timeRemaining % 60;
+        NSString *countdownString = [NSString stringWithFormat:@"%d:%d mins", minutesRemaining, secondsRemaining];
+        [self.timerLabel assignText:countdownString];
+    }
+    else
+    {
+        [self.timerLabel assignText:@"90:00 mins"];
+    }
+}
+
+-(void)setupLocationTracker
+{
+    if (self.model.locationLat && self.model.locationLng && ![User clueCompleted:self.model.clueNumber])
+    {
+        self.locationTracker = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                target:self
+                                                              selector:@selector(CurrentLocationIdentifier)
+                                                              userInfo:nil
+                                                               repeats:YES];
+    }
+    
+}
+
+//-(void)stopLocationTracker
+//{
+//    [self.locationTracker invalidate];
+//    self.locationTracker = nil;
+//}
+
+-(void)CurrentLocationIdentifier
+{ self.locationManager = [[LocationTracker alloc] initWithViewController:self]; }
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.locationManager stopUpdatingLocation];
+    if ([self.locationManager reachedLocationWithLatitude:self.model.locationLat andLongitude:self.model.locationLng])
+    {
+        [self clueCompleteProcess];
+        [self completeClueUI];
+    }
+    
+    NSString *distanceText = [NSString stringWithFormat:@"%d m", [self.locationManager distanceFromMe]];
+    [self.distanceLabel assignText:distanceText];
+}
+
+- (void)clueCompleteProcess
+{ [User completeClue:self.model.clueNumber]; }
 
 @end

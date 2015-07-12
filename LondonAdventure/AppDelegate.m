@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AdventureTabBarViewController.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()
@@ -17,8 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
     [GMSServices provideAPIKey:@"AIzaSyBPNppBA1pF02ON33AOtDhSVFUP51KsZb8"];
     return YES;
 }

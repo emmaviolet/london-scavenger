@@ -7,6 +7,7 @@
 //
 
 #import "LocationTracker.h"
+@import GoogleMaps;
 
 @implementation LocationTracker
 
@@ -36,6 +37,20 @@
         
         float allowableDifference = 0.0005;
         return (latDistance < allowableDifference && lngDistance < allowableDifference);
+    }
+}
+
+- (NSInteger)distanceFromMe
+{
+    CLLocation *location = [self location];
+    {
+        float locationLng = location.coordinate.longitude;
+        float locationLat = location.coordinate.latitude;
+        
+        CLLocationCoordinate2D myLocation = CLLocationCoordinate2DMake(51.5106952, -0.1755287);
+        CLLocationCoordinate2D userLocation = CLLocationCoordinate2DMake(locationLat, locationLng);
+        
+        return GMSGeometryDistance(userLocation, myLocation);
     }
 }
 

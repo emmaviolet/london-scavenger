@@ -25,13 +25,10 @@
 @property (nonatomic, assign) float locationLat;
 @property (nonatomic, assign) float locationLng;
 
-@property (nonatomic, strong) NSString *helpController;
-@property (nonatomic, strong) NSTimer *locationTracker;
-@property (nonatomic, strong) LocationTracker *locationManager;
-
 @property (nonatomic, strong) AdventureViewController *viewController;
 
 -(void)clueCompleteProcess;
 -(void)setupLocationTracker;
+-(void)stopLocationTracker;
 
 @end

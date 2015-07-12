@@ -43,7 +43,7 @@
     AdventureViewController *viewController6 = [[ClueSixViewController alloc] init];
     AdventureViewController *viewController7 = [[ClueSevenViewController alloc] init];
     
-    self.viewControllers = [ NSArray arrayWithObjects:viewController0, viewController1, viewController2, viewController3, viewController4, viewController5, viewController6, viewController7, nil];
+    self.viewControllers = [ NSArray arrayWithObjects:viewController0, viewController1, viewController2, viewController3, viewController4, viewController5, viewController6, nil];
 }
 
 -(void)setTabsByState
@@ -52,19 +52,24 @@
         
         if (viewController.model.navBarImage)
         {
-//            UIImage *selectedImage1 = [UIImage imageNamed:viewController.model.navBarImage];
-//            UIImage *unselectedImage1 = [UIImage imageNamed:viewController.model.navBarImage];
-//            
-//            UITabBarItem *item1 = [self.tabBar.items objectAtIndex:[viewController.model.clueNumber integerValue]];
-
-            [[self.tabBar.items objectAtIndex:[viewController.model.clueNumber integerValue]] setImage:[UIImage imageNamed:viewController.model.navBarImage]];
+            UIImage *image = [UIImage imageNamed:viewController.model.navBarImage];
+            UIImage *tempImage = nil;
+            CGSize targetSize = CGSizeMake(40,40);
+            UIGraphicsBeginImageContext(targetSize);
             
-//            [item1 setFinishedSelectedImage:selectedImage1 withFinishedUnselectedImage:unselectedImage1];
+            CGRect thumbnailRect = CGRectMake(0.0, 0.0, targetSize.width, targetSize.height);
+            [image drawInRect:thumbnailRect];
+            
+            tempImage = UIGraphicsGetImageFromCurrentImageContext();
+            
+            [[self.tabBar.items objectAtIndex:[viewController.model.clueNumber integerValue]] setImage:tempImage];
+            UITabBarItem *tabBarItem = [self.tabBar.items objectAtIndex:[viewController.model.clueNumber integerValue]];
+            tabBarItem.imageInsets = UIEdgeInsetsMake(8, 0, -7, 0);
         }
         
         NSInteger nextViewNumber = [viewController.model.clueNumber integerValue] + 1;
         
-        if (nextViewNumber <= 7)
+        if (nextViewNumber <= [self.viewControllers count] - 1)
         {
             if ([User clueCompleted:viewController.model.clueNumber])
             { [[self.tabBar.items objectAtIndex:nextViewNumber] setEnabled:true]; }

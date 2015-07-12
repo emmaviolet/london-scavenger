@@ -8,6 +8,10 @@
 
 #import "User.h"
 
+@interface User ()
+
+@end
+
 @implementation User
 
 + (NSArray *)cluesSeen
@@ -43,13 +47,12 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults arrayForKey:@"cluesComplete"])
     {
-        NSArray *completeCluesArray = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
+        NSArray *completeCluesArray = [[NSArray alloc] init];
         [defaults setObject:completeCluesArray forKey:@"cluesComplete"];
     }
     
     NSArray *cluesComplete = [defaults arrayForKey:@"cluesComplete"];
     NSMutableArray *newCluesComplete = [NSMutableArray arrayWithArray:cluesComplete];
-    
     [newCluesComplete addObject:clueNumber];
     NSArray *cluesCompleteTwo = [newCluesComplete copy];
     
@@ -62,7 +65,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults arrayForKey:@"cluesComplete"])
     {
-        NSArray *completeCluesArray = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
+        NSArray *completeCluesArray = [[NSArray alloc] init];
         [defaults setObject:completeCluesArray forKey:@"cluesComplete"];
     }
     
@@ -71,6 +74,17 @@
     return [completeClues containsObject:clueNumber];
 }
 
++ (void)addStartTime:(NSDate*)startTime
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:startTime forKey:@"startTime"];
+    [defaults synchronize];
+}
 
++ (id)startTime
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:@"startTime"];
+}
 
 @end

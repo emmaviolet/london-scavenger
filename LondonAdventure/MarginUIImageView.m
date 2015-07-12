@@ -28,7 +28,7 @@
 }
 
 -(id)initWithImage:(nullable UIImage *)image
-{    
+{
     return self;
 }
 
