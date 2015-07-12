@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *backgroundImageName;
 @property (nonatomic, assign) NSNumber *clueNumber;
 @property (strong, nonatomic) NSString *contentText;
+@property (strong, nonatomic) NSString *helpImage;
 @property (strong, nonatomic) NSString *helpText;
 @property (strong, nonatomic) NSString *navBarImage;
 @property (strong, nonatomic) NSString *titleText;

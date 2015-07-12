@@ -36,4 +36,10 @@
     return clue;
 }
 
+- (void)addContentLabel {}
+- (void)addGoogleMap {}
+- (void)createHelpLabel {}
+- (void)completeClueUI {}
+- (void)incompleteClueUI {}
+
 @end

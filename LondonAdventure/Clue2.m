@@ -26,14 +26,14 @@
     return [NSString stringWithFormat:@"%@\r\r%@", para1, para2];
 }
 
+- (NSString *)helpImage
+{
+    return @"clue2.png";
+}
+
 -(NSString *)titleText
 {
     return [NSString stringWithFormat:@"Clue Two"];
-}
-
-- (NSString *)backgroundImageName
-{
-    return @"map2full.png";
 }
 
 - (NSString *)navBarImage

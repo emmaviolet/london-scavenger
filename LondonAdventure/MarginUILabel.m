@@ -45,7 +45,10 @@
 - (void)setFontSize:(NSInteger)fontSize
 {
     
-    self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
+    self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1.0f];
+    self.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    self.layer.borderWidth = 3.0;
+    
     self.opaque = YES;
     self.font = [UIFont systemFontOfSize:fontSize];
 }

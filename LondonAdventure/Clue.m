@@ -17,6 +17,11 @@
 
 @implementation Clue
 
+- (NSString *)backgroundImageName
+{
+    return @"london-wallpaper.png";
+}
+
 -(void)setupLocationTracker
 {
     if (self.locationLat && self.locationLng && ![User clueCompleted:self.clueNumber])

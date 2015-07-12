@@ -11,20 +11,31 @@
 #import "Clue.h"
 #import "ClueHelpAlertView.h"
 #import "LocationTracker.h"
+#import "MarginUIImageView.h"
 #import "MarginUILabel.h"
 #import "User.h"
 
+@import GoogleMaps;
+
 @interface AdventureViewController ()
 @property (nonatomic, assign) int resetDefaults;
-@property (nonatomic, assign) int repeatingClue;
+
 @property (nonatomic, strong) MarginUILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *checkmark;
 @property (nonatomic, strong) UIButton *eyeButton;
 @property (strong, nonatomic) IBOutlet MarginUILabel *contentLabel;
 @property (strong, nonatomic) IBOutlet MarginUILabel *helpLabel;
+
+@property (strong, nonatomic) IBOutlet GMSMapView *mapView;
+@property (strong, nonatomic) IBOutlet MarginUIImageView *imageSubView;
+
 @end
 
 @implementation AdventureViewController
+
+{
+    GMSMapView *mapView_;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +43,8 @@
     [self setBackgroundImage];
     [self addTitleLabel];
     [self addContentLabel];
+    [self addGoogleMap];
+    
     [self createHelpLabel];
     
     [self setHoldDownOption];
@@ -67,34 +80,47 @@
 
 - (void)addContentLabel
 {
-    if (self.model.contentText)
-    {
-        self.contentLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
-        [self.contentLabel assignText:self.model.contentText];
-        [self.view addSubview:self.contentLabel];
-        [self.contentLabel setFontSize:20];
-    }
+    self.contentLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
+    [self.contentLabel assignText:self.model.contentText];
+    [self.view addSubview:self.contentLabel];
+    [self.contentLabel setFontSize:20];
+}
+
+- (void)addGoogleMap
+{
+    CGRect viewRect = CGRectMake(20, 522, 728, 358);
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:self.model.locationLat
+                                                            longitude:self.model.locationLng
+                                                                 zoom:15];
+    
+    self.mapView = [GMSMapView mapWithFrame:viewRect camera:camera];
+    self.mapView.myLocationEnabled = YES;
+    self.mapView.myLocationEnabled = YES;
+    self.mapView.layer.masksToBounds = YES;
+    self.mapView.layer.cornerRadius = 8.0;
+    self.mapView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    self.mapView.layer.borderWidth = 3.0;
+    [self.view addSubview:self.mapView];
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(self.model.locationLat, self.model.locationLng);
+    marker.title = self.model.titleText;
+    marker.map = self.mapView;
 }
 
 - (void)createHelpLabel
 {
-    if (self.model.helpText)
-    {
-        self.helpLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
-        [self.helpLabel assignText:self.model.helpText];
-        [self.helpLabel setFontSize:20];
-    }
+    self.helpLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
+    [self.helpLabel assignText:self.model.helpText];
+    [self.helpLabel setFontSize:20];
 }
 
 - (void)addTitleLabel
 {
-    if (self.model.titleText)
-    {
-        self.titleLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 20, 728, 86)];
-        [self.titleLabel assignText:self.model.titleText];
-        [self.view addSubview:self.titleLabel];
-        [self.titleLabel setFontSize:60];
-    }
+    self.titleLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 20, 728, 86)];
+    [self.titleLabel assignText:self.model.titleText];
+    [self.view addSubview:self.titleLabel];
+    [self.titleLabel setFontSize:60];
 }
 
 - (void)createSwipeActions
@@ -148,20 +174,14 @@
 
 - (void)completeClueUI
 {
-    if (self.model.helpText)
-    {
-        [self.titleLabel addSubview:self.checkmark];
-        [self.view addSubview:self.eyeButton];
-    }
+    [self.titleLabel addSubview:self.checkmark];
+    [self.view addSubview:self.eyeButton];
 }
 
 - (void)incompleteClueUI
 {
-    if (self.model.helpText)
-    {
-        [self.checkmark removeFromSuperview];
-        [self.eyeButton removeFromSuperview];
-    }
+    [self.checkmark removeFromSuperview];
+    [self.eyeButton removeFromSuperview];
 }
 
 - (void)eyeTap:(UIButton *)sender
@@ -177,13 +197,11 @@
         {
             if ([[User cluesSeen] containsObject:self.model.clueNumber])
             {
-                self.repeatingClue = TRUE;
-                ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueRepeatedandDelegateTo:self];
-                [alertView show];
+                [self.contentLabel removeFromSuperview];
+                [self.view addSubview:self.helpLabel];
             }
             else
             {
-                self.repeatingClue = FALSE;
                 ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:[User cluesSeenCount] andDelegateTo:self];
                 [alertView show];
             }
@@ -218,13 +236,9 @@
 {
     if (buttonIndex == 1)
     {
-        if (self.model.helpText)
-        {
-            if (!self.repeatingClue)
-            { [User addClueToCluesSeen:self.model.clueNumber]; }
-            [self.contentLabel removeFromSuperview];
-            [self.view addSubview:self.helpLabel];
-        }
+        { [User addClueToCluesSeen:self.model.clueNumber]; }
+        [self.contentLabel removeFromSuperview];
+        [self.view addSubview:self.helpLabel];
     }
 }
 
