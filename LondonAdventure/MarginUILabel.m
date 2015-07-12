@@ -42,4 +42,12 @@
     return self;
 }
 
+- (void)setFontSize:(NSInteger)fontSize
+{
+    
+    self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
+    self.opaque = YES;
+    self.font = [UIFont systemFontOfSize:fontSize];
+}
+
 @end

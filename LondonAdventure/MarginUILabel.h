@@ -11,5 +11,6 @@
 @interface MarginUILabel : UILabel
 
 - (id)assignText:(NSString *)text;
+- (void)setFontSize:(NSInteger)fontSize;
 
 @end

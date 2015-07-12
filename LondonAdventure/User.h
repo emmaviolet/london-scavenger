@@ -10,7 +10,7 @@
 
 @interface User : NSObject
 
-+ (void)addClueToCluesSeen:(NSString *)clue;
++ (void)addClueToCluesSeen:(NSNumber *)clue;
 + (NSArray *)cluesSeen;
 + (NSInteger)cluesSeenCount;
 

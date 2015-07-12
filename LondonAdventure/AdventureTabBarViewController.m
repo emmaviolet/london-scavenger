@@ -9,8 +9,12 @@
 #import "AdventureTabBarViewController.h"
 #import "AdventureViewController.h"
 #import "ClueOneViewController.h"
-
-
+#import "ClueTwoViewController.h"
+#import "ClueThreeViewController.h"
+#import "ClueFourViewController.h"
+#import "ClueFiveViewController.h"
+#import "ClueSixViewController.h"
+#import "ClueSevenViewController.h"
 #import "User.h"
 
 @interface AdventureTabBarViewController ()
@@ -31,14 +35,13 @@
     AdventureViewController *viewController0 = [self.storyboard instantiateViewControllerWithIdentifier:@"C0"];
     
     AdventureViewController *viewController1 = [[ClueOneViewController alloc] init];
+    AdventureViewController *viewController2 = [[ClueTwoViewController alloc] init];
+    AdventureViewController *viewController3 = [[ClueThreeViewController alloc] init];
     
-//    AdventureViewController *viewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"C1"];
-    AdventureViewController *viewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"C2"];
-    AdventureViewController *viewController3 = [self.storyboard instantiateViewControllerWithIdentifier:@"C3"];
-    AdventureViewController *viewController4 = [self.storyboard instantiateViewControllerWithIdentifier:@"C4"];
-    AdventureViewController *viewController5 = [self.storyboard instantiateViewControllerWithIdentifier:@"C5"];
-    AdventureViewController *viewController6 = [self.storyboard instantiateViewControllerWithIdentifier:@"C6"];
-    AdventureViewController *viewController7 = [self.storyboard instantiateViewControllerWithIdentifier:@"C7"];
+    AdventureViewController *viewController4 = [[ClueFourViewController alloc] init];
+    AdventureViewController *viewController5 = [[ClueFiveViewController alloc] init];
+    AdventureViewController *viewController6 = [[ClueSixViewController alloc] init];
+    AdventureViewController *viewController7 = [[ClueSevenViewController alloc] init];
     
     self.viewControllers = [ NSArray arrayWithObjects:viewController0, viewController1, viewController2, viewController3, viewController4, viewController5, viewController6, viewController7, nil];
 }
@@ -47,7 +50,17 @@
 {
     for (AdventureViewController *viewController in self.viewControllers) {
         
-        
+        if (viewController.model.navBarImage)
+        {
+//            UIImage *selectedImage1 = [UIImage imageNamed:viewController.model.navBarImage];
+//            UIImage *unselectedImage1 = [UIImage imageNamed:viewController.model.navBarImage];
+//            
+//            UITabBarItem *item1 = [self.tabBar.items objectAtIndex:[viewController.model.clueNumber integerValue]];
+
+            [[self.tabBar.items objectAtIndex:[viewController.model.clueNumber integerValue]] setImage:[UIImage imageNamed:viewController.model.navBarImage]];
+            
+//            [item1 setFinishedSelectedImage:selectedImage1 withFinishedUnselectedImage:unselectedImage1];
+        }
         
         NSInteger nextViewNumber = [viewController.model.clueNumber integerValue] + 1;
         
@@ -72,15 +85,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

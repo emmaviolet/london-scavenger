@@ -38,11 +38,6 @@
     return [NSString stringWithFormat:@"Clue One"];
 }
 
-//- (NSString *)helpController
-//{
-//    return [NSString stringWithFormat:@"H1"];
-//}
-
 - (NSString *)backgroundImageName
 {
     return @"map1full.png";

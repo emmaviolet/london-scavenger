@@ -22,7 +22,7 @@
     return [defaults integerForKey:@"cluesSeenCount"];
 }
 
-+ (void)addClueToCluesSeen:(NSString *)clue
++ (void)addClueToCluesSeen:(NSNumber *)clue
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     

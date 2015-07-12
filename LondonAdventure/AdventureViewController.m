@@ -72,10 +72,7 @@
         self.contentLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
         [self.contentLabel assignText:self.model.contentText];
         [self.view addSubview:self.contentLabel];
-    
-        self.contentLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
-        self.contentLabel.opaque = YES;
-        self.contentLabel.font = [UIFont systemFontOfSize:20];
+        [self.contentLabel setFontSize:20];
     }
 }
 
@@ -85,10 +82,7 @@
     {
         self.helpLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 114, 728, 400)];
         [self.helpLabel assignText:self.model.helpText];
-        
-        self.helpLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
-        self.helpLabel.opaque = YES;
-        self.helpLabel.font = [UIFont systemFontOfSize:20];
+        [self.helpLabel setFontSize:20];
     }
 }
 
@@ -99,10 +93,7 @@
         self.titleLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(20, 20, 728, 86)];
         [self.titleLabel assignText:self.model.titleText];
         [self.view addSubview:self.titleLabel];
-        
-        self.titleLabel.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7f];
-        self.titleLabel.opaque = YES;
-        self.titleLabel.font = [UIFont systemFontOfSize:60];
+        [self.titleLabel setFontSize:60];
     }
 }
 
@@ -137,13 +128,6 @@
     { [self.tabBarController setSelectedIndex:selectedIndex - 1]; }
 }
 
-- (UIViewController *)instantiateHelpController
-{
-    if (self.model.helpController)
-    { return [self.storyboard instantiateViewControllerWithIdentifier:self.model.helpController]; }
-    else { return nil; }
-}
-
 -(void)checkIfCompleted
 {
     if ([User clueCompleted:self.model.clueNumber]) { [self completeClueUI]; }
@@ -164,7 +148,7 @@
 
 - (void)completeClueUI
 {
-    if (self.model.helpController || self.model.helpText)
+    if (self.model.helpText)
     {
         [self.titleLabel addSubview:self.checkmark];
         [self.view addSubview:self.eyeButton];
@@ -173,7 +157,7 @@
 
 - (void)incompleteClueUI
 {
-    if (self.model.helpController || self.model.helpText)
+    if (self.model.helpText)
     {
         [self.checkmark removeFromSuperview];
         [self.eyeButton removeFromSuperview];
@@ -182,28 +166,28 @@
 
 - (void)eyeTap:(UIButton *)sender
 {
-    if (self.model.helpController && sender.state == UIGestureRecognizerStateBegan)
+    if([self.helpLabel isDescendantOfView:self.view])
     {
-        if ([[User cluesSeen] containsObject:self.model.helpController])
-        {
-            self.repeatingClue = TRUE;
-            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueRepeatedandDelegateTo:self];
-            [alertView show];
-        }
-        else
-        {
-            self.repeatingClue = FALSE;
-            ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:[User cluesSeenCount] andDelegateTo:self];
-            [alertView show];
-        }
+        [self.helpLabel removeFromSuperview];
+        [self.view addSubview:self.contentLabel];
     }
-    
-    if (!self.model.helpController && sender.state == UIGestureRecognizerStateBegan)
+    else
     {
-
-        self.repeatingClue = FALSE;
-        ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:0 andDelegateTo:self];
-        [alertView show];
+        if (self.model.helpText && sender.state == UIGestureRecognizerStateBegan)
+        {
+            if ([[User cluesSeen] containsObject:self.model.clueNumber])
+            {
+                self.repeatingClue = TRUE;
+                ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueRepeatedandDelegateTo:self];
+                [alertView show];
+            }
+            else
+            {
+                self.repeatingClue = FALSE;
+                ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:[User cluesSeenCount] andDelegateTo:self];
+                [alertView show];
+            }
+        }
     }
 }
 
@@ -222,14 +206,6 @@
         [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
         [self.tabBarController viewDidLoad];
     }
-    
-    if (self.model.helpController && sender.state == UIGestureRecognizerStateBegan)
-    {
-        [self.model clueCompleteProcess];
-        [self completeClueUI];
-        [self activateNextTab];
-    }
-    
     if (self.model.helpText && sender.state == UIGestureRecognizerStateBegan)
     {
         [self.model clueCompleteProcess];
@@ -242,16 +218,10 @@
 {
     if (buttonIndex == 1)
     {
-        if (self.model.helpController)
-        {
-            if (!self.repeatingClue)
-            { [User addClueToCluesSeen:self.model.helpController]; }
-            [self presentViewController:self.instantiateHelpController animated:YES completion:nil];
-        }
         if (self.model.helpText)
         {
-//            if (!self.repeatingClue)
-//            { [User addClueToCluesSeen:self.model.clueNumber]; }
+            if (!self.repeatingClue)
+            { [User addClueToCluesSeen:self.model.clueNumber]; }
             [self.contentLabel removeFromSuperview];
             [self.view addSubview:self.helpLabel];
         }

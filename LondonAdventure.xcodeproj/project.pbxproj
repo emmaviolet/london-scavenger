@@ -19,9 +19,6 @@
 		4694B2CF1B51F8260053C3FE /* Clue5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4694B2CE1B51F8260053C3FE /* Clue5.m */; };
 		4694B2D21B51F8340053C3FE /* Clue6.m in Sources */ = {isa = PBXBuildFile; fileRef = 4694B2D11B51F8340053C3FE /* Clue6.m */; };
 		4694B2D51B51F83F0053C3FE /* Clue7.m in Sources */ = {isa = PBXBuildFile; fileRef = 4694B2D41B51F83F0053C3FE /* Clue7.m */; };
-		469C42CC1B4DB75B008431C7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469C42CB1B4DB75B008431C7 /* HelpViewController.m */; };
-		469C42CF1B4DB7DD008431C7 /* HelpOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469C42CE1B4DB7DD008431C7 /* HelpOneViewController.m */; };
-		469C42D41B4DB8A5008431C7 /* HelpTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469C42D31B4DB8A5008431C7 /* HelpTwoViewController.m */; };
 		46ACC1641B4D85290018B77B /* MarginUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ACC1631B4D85290018B77B /* MarginUILabel.m */; };
 		46B97D0A1B4C5BE000C8367E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D091B4C5BE000C8367E /* main.m */; };
 		46B97D0D1B4C5BE000C8367E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B97D0C1B4C5BE000C8367E /* AppDelegate.m */; };
@@ -39,11 +36,6 @@
 		46D7BAD41B51F2F700AEA071 /* ClueHelpAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D7BAD31B51F2F700AEA071 /* ClueHelpAlertView.m */; };
 		46D7BAD71B51F5B900AEA071 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D7BAD61B51F5B900AEA071 /* Clue.m */; };
 		46E694851B51EAA90002981F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E694841B51EAA90002981F /* User.m */; };
-		46FE6EFD1B4DC1E40007AA71 /* HelpThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6EFC1B4DC1E40007AA71 /* HelpThreeViewController.m */; };
-		46FE6F001B4DC2710007AA71 /* HelpFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6EFF1B4DC2710007AA71 /* HelpFourViewController.m */; };
-		46FE6F031B4DC2840007AA71 /* HelpFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6F021B4DC2840007AA71 /* HelpFiveViewController.m */; };
-		46FE6F061B4DC2900007AA71 /* HelpSixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6F051B4DC2900007AA71 /* HelpSixViewController.m */; };
-		46FE6F091B4DC29E0007AA71 /* HelpSevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FE6F081B4DC29E0007AA71 /* HelpSevenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,12 +63,6 @@
 		4694B2D11B51F8340053C3FE /* Clue6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue6.m; sourceTree = "<group>"; };
 		4694B2D31B51F83F0053C3FE /* Clue7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue7.h; sourceTree = "<group>"; };
 		4694B2D41B51F83F0053C3FE /* Clue7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue7.m; sourceTree = "<group>"; };
-		469C42CA1B4DB75B008431C7 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
-		469C42CB1B4DB75B008431C7 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		469C42CD1B4DB7DD008431C7 /* HelpOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpOneViewController.h; sourceTree = "<group>"; };
-		469C42CE1B4DB7DD008431C7 /* HelpOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpOneViewController.m; sourceTree = "<group>"; };
-		469C42D21B4DB8A5008431C7 /* HelpTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpTwoViewController.h; sourceTree = "<group>"; };
-		469C42D31B4DB8A5008431C7 /* HelpTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpTwoViewController.m; sourceTree = "<group>"; };
 		46ACC1621B4D85290018B77B /* MarginUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarginUILabel.h; sourceTree = "<group>"; };
 		46ACC1631B4D85290018B77B /* MarginUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarginUILabel.m; sourceTree = "<group>"; };
 		46B97D051B4C5BE000C8367E /* LondonAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LondonAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,16 +95,6 @@
 		46D7BAD61B51F5B900AEA071 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
 		46E694831B51EAA90002981F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		46E694841B51EAA90002981F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		46FE6EFB1B4DC1E40007AA71 /* HelpThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpThreeViewController.h; sourceTree = "<group>"; };
-		46FE6EFC1B4DC1E40007AA71 /* HelpThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpThreeViewController.m; sourceTree = "<group>"; };
-		46FE6EFE1B4DC2710007AA71 /* HelpFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpFourViewController.h; sourceTree = "<group>"; };
-		46FE6EFF1B4DC2710007AA71 /* HelpFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpFourViewController.m; sourceTree = "<group>"; };
-		46FE6F011B4DC2840007AA71 /* HelpFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpFiveViewController.h; sourceTree = "<group>"; };
-		46FE6F021B4DC2840007AA71 /* HelpFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpFiveViewController.m; sourceTree = "<group>"; };
-		46FE6F041B4DC2900007AA71 /* HelpSixViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpSixViewController.h; sourceTree = "<group>"; };
-		46FE6F051B4DC2900007AA71 /* HelpSixViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpSixViewController.m; sourceTree = "<group>"; };
-		46FE6F071B4DC29E0007AA71 /* HelpSevenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpSevenViewController.h; sourceTree = "<group>"; };
-		46FE6F081B4DC29E0007AA71 /* HelpSevenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpSevenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,29 +162,6 @@
 			name = Clues;
 			sourceTree = "<group>";
 		};
-		469C42D11B4DB809008431C7 /* Help */ = {
-			isa = PBXGroup;
-			children = (
-				469C42CA1B4DB75B008431C7 /* HelpViewController.h */,
-				469C42CB1B4DB75B008431C7 /* HelpViewController.m */,
-				469C42CD1B4DB7DD008431C7 /* HelpOneViewController.h */,
-				469C42CE1B4DB7DD008431C7 /* HelpOneViewController.m */,
-				469C42D21B4DB8A5008431C7 /* HelpTwoViewController.h */,
-				469C42D31B4DB8A5008431C7 /* HelpTwoViewController.m */,
-				46FE6EFB1B4DC1E40007AA71 /* HelpThreeViewController.h */,
-				46FE6EFC1B4DC1E40007AA71 /* HelpThreeViewController.m */,
-				46FE6EFE1B4DC2710007AA71 /* HelpFourViewController.h */,
-				46FE6EFF1B4DC2710007AA71 /* HelpFourViewController.m */,
-				46FE6F011B4DC2840007AA71 /* HelpFiveViewController.h */,
-				46FE6F021B4DC2840007AA71 /* HelpFiveViewController.m */,
-				46FE6F041B4DC2900007AA71 /* HelpSixViewController.h */,
-				46FE6F051B4DC2900007AA71 /* HelpSixViewController.m */,
-				46FE6F071B4DC29E0007AA71 /* HelpSevenViewController.h */,
-				46FE6F081B4DC29E0007AA71 /* HelpSevenViewController.m */,
-			);
-			name = Help;
-			sourceTree = "<group>";
-		};
 		469C42D51B4DBBDA008431C7 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,7 +206,6 @@
 				461A5EE41B51E04F0084EEED /* Models */,
 				469C42D61B4DBBF8008431C7 /* Storyboards */,
 				469C42D51B4DBBDA008431C7 /* UIComponents */,
-				469C42D11B4DB809008431C7 /* Help */,
 				469C42D01B4DB7E9008431C7 /* Clues */,
 				46B97D0B1B4C5BE000C8367E /* AppDelegate.h */,
 				46B97D0C1B4C5BE000C8367E /* AppDelegate.m */,
@@ -353,10 +305,8 @@
 				46B97D331B4D7B2500C8367E /* ClueTwoViewController.m in Sources */,
 				46D7BAD41B51F2F700AEA071 /* ClueHelpAlertView.m in Sources */,
 				4694B2C91B51F80F0053C3FE /* Clue3.m in Sources */,
-				46FE6F061B4DC2900007AA71 /* HelpSixViewController.m in Sources */,
 				46B97D0D1B4C5BE000C8367E /* AppDelegate.m in Sources */,
 				46B97D0A1B4C5BE000C8367E /* main.m in Sources */,
-				469C42D41B4DB8A5008431C7 /* HelpTwoViewController.m in Sources */,
 				46B97D391B4D7BA200C8367E /* ClueFourViewController.m in Sources */,
 				46E694851B51EAA90002981F /* User.m in Sources */,
 				466476D51B4D97C40005DEF6 /* IntroductionViewController.m in Sources */,
@@ -364,21 +314,15 @@
 				46ACC1641B4D85290018B77B /* MarginUILabel.m in Sources */,
 				46B97D3F1B4D7BBF00C8367E /* ClueSixViewController.m in Sources */,
 				4694B2C01B51F7EB0053C3FE /* Clue0.m in Sources */,
-				46FE6F091B4DC29E0007AA71 /* HelpSevenViewController.m in Sources */,
 				461A5EE71B51E06B0084EEED /* LocationTracker.m in Sources */,
 				46B97D241B4D715B00C8367E /* AdventureViewController.m in Sources */,
-				469C42CF1B4DB7DD008431C7 /* HelpOneViewController.m in Sources */,
 				4694B2C31B51F7F70053C3FE /* Clue1.m in Sources */,
 				4694B2CC1B51F81B0053C3FE /* Clue4.m in Sources */,
 				46B97D2D1B4D7AFD00C8367E /* ClueOneViewController.m in Sources */,
 				4694B2D51B51F83F0053C3FE /* Clue7.m in Sources */,
-				469C42CC1B4DB75B008431C7 /* HelpViewController.m in Sources */,
 				4694B2D21B51F8340053C3FE /* Clue6.m in Sources */,
-				46FE6EFD1B4DC1E40007AA71 /* HelpThreeViewController.m in Sources */,
 				46B97D271B4D717500C8367E /* ClueSevenViewController.m in Sources */,
-				46FE6F031B4DC2840007AA71 /* HelpFiveViewController.m in Sources */,
 				46B97D3C1B4D7BB200C8367E /* ClueFiveViewController.m in Sources */,
-				46FE6F001B4DC2710007AA71 /* HelpFourViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
