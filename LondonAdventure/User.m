@@ -87,4 +87,16 @@
     return [defaults objectForKey:@"startTime"];
 }
 
++ (BOOL)bonusClueActive
+{
+    return ([[NSUserDefaults standardUserDefaults] boolForKey:@"bonusClueActive"] || FALSE);
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    return (!![defaults objectForKey:@"bonusClueActive"]);
+}
+
++ (void)activateBonusClue
+{
+    [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"bonusClueActive"];
+}
+
 @end

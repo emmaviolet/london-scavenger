@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Clue.h"
+#import "MarginUILabel.h"
 
 //@class Clue;
 
@@ -20,9 +21,15 @@
 }
 
 @property (strong, nonatomic) Clue *model;
+@property (nonatomic, strong) UIImageView *checkmark;
+@property (nonatomic, strong) UIButton *eyeButton;
+@property (nonatomic, strong) MarginUILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet MarginUILabel *distanceLabel;
 
 -(void)checkIfCompleted;
 -(void)completeClueUI;
+-(void)eyeTap:(UIButton *)sender;
+-(void)stopLocationTracker;
 
 @end
                                                                                 

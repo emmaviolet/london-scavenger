@@ -20,4 +20,7 @@
 + (void)addStartTime:(NSDate*)startTime;
 + (id)startTime;
 
++ (void)activateBonusClue;
++ (BOOL)bonusClueActive;
+
 @end

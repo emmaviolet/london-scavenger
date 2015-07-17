@@ -33,9 +33,9 @@
         float lngDistance = fabsf(locationLng - longitude);
         float latDistance = fabsf(locationLat - latitude);
         
-        NSLog(@"logging location, %f, %f", longitude, latitude);
+        NSLog(@"logging location, %f, %f", locationLng, locationLat);
         
-        float allowableDifference = 0.0005;
+        float allowableDifference = 0.00035;
         return (latDistance < allowableDifference && lngDistance < allowableDifference);
     }
 }
@@ -47,7 +47,7 @@
         float locationLng = location.coordinate.longitude;
         float locationLat = location.coordinate.latitude;
         
-        CLLocationCoordinate2D myLocation = CLLocationCoordinate2DMake(51.5106952, -0.1755287);
+        CLLocationCoordinate2D myLocation = CLLocationCoordinate2DMake(51.510185, -0.175468);
         CLLocationCoordinate2D userLocation = CLLocationCoordinate2DMake(locationLat, locationLng);
         
         return GMSGeometryDistance(userLocation, myLocation);

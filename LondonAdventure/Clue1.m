@@ -27,8 +27,8 @@
 
 -(NSString *)helpText
 {
-    NSString *para1 = @"Oh no! Fortunately I've installed google maps on the iPad, so you should be able to manage without the guide, but you might want to pick up another copy of the Lonely Planet Pocket Guide to London if you can.";
-    NSString *para2 = @"You also missed one small clue: 01110100. Good luck!";
+    NSString *para1 = @"Oh no! Fortunately I've installed google maps on the iPad, so you should be able to manage without the guide, but you might want to pick up another copy of the Lonely Planet Pocket Guide to London if you can. Otherwise, this map of the West might help :-)";
+    NSString *para2 = @"You also missed one small clue: 01010100. Good luck!";
     
     return [NSString stringWithFormat:@"%@\r\r%@", para1, para2];
 }
@@ -46,6 +46,11 @@
 - (NSString *)navBarImage
 {
     return @"one-black.png";
+}
+
+- (NSString *)clueCompleteText
+{
+    return @"Looks like you made it, so I've unlocked the next clue. If you can't pick up the clue here you can click the eye button to see it.";
 }
 
 - (NSNumber *)clueNumber

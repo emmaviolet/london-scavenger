@@ -2,14 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Screen Shot 2015-07-17 at 09.27.20.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Screen Shot 2015-07-17 at 09.27.20-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Screen Shot 2015-07-17 at 09.27.20-2.png",
       "scale" : "3x"
     }
   ],

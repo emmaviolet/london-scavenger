@@ -12,7 +12,6 @@
 #import "ClueHelpAlertView.h"
 #import "LocationTracker.h"
 #import "MarginUIImageView.h"
-#import "MarginUILabel.h"
 #import "ScaledImage.h"
 #import "User.h"
 
@@ -21,9 +20,6 @@
 @interface AdventureViewController ()
 @property (nonatomic, assign) int resetDefaults;
 
-@property (nonatomic, strong) MarginUILabel *titleLabel;
-@property (nonatomic, strong) UIImageView *checkmark;
-@property (nonatomic, strong) UIButton *eyeButton;
 @property (strong, nonatomic) IBOutlet MarginUILabel *contentLabel;
 @property (strong, nonatomic) IBOutlet MarginUILabel *helpLabel;
 
@@ -31,14 +27,14 @@
 @property (strong, nonatomic) IBOutlet MarginUILabel *helpImageLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *helpImageView;
 
-@property (nonatomic, strong) NSTimer *locationTracker;
 @property (nonatomic, strong) LocationTracker *locationManager;
 
 @property (strong, nonatomic) IBOutlet MarginUILabel *timerLabel;
-@property (strong, nonatomic) IBOutlet MarginUILabel *distanceLabel;
 
+@property (nonatomic, strong) NSTimer *locationTracker;
 @property (strong, nonatomic) NSTimer *countdownTimer;
-@property (strong, nonatomic) NSTimer *distanceTracker;
+
+@property (nonatomic, strong) UIAlertView *clueCompleteAlert;
 @end
 
 @implementation AdventureViewController
@@ -50,14 +46,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self CurrentLocationIdentifier];
     [self setBackgroundImage];
     [self addTitleLabel];
     [self addContentLabel];
     [self addGoogleMap];
     [self addTimer];
     [self timeSinceStart];
-    
-    [self addTracker];
     
     [self createHelpViews];
     
@@ -68,6 +63,9 @@
     
     [self setupCountdownTimer];
     [self setupLocationTracker];
+    
+    [self setupClueCompleteAlert];
+    [self addTracker];
     // Do any additional setup after loading the view.
 }
 
@@ -88,7 +86,7 @@
 - (void)setHoldDownOption
 {
     UILongPressGestureRecognizer *holdDown = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
-    holdDown.minimumPressDuration = 1.0f;
+    holdDown.minimumPressDuration = 10.0f;
     holdDown.allowableMovement = 100.0f;
     [self.view addGestureRecognizer:holdDown];
 }
@@ -221,9 +219,7 @@
         if (self.model.helpText && sender.state == UIGestureRecognizerStateBegan)
         {
             if ([[User cluesSeen] containsObject:self.model.clueNumber])
-            {
-                [self loadHelpView];
-            }
+            { [self loadHelpView]; }
             else
             {
                 ClueHelpAlertView *alertView = [[ClueHelpAlertView alloc] initWithClueCount:[User cluesSeenCount] andDelegateTo:self];
@@ -242,9 +238,10 @@
 
 - (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
 {
-    [self.model clueCompleteProcess];
+    [self clueCompleteProcess];
     [self completeClueUI];
     [self activateNextTab];
+    [self.clueCompleteAlert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -272,13 +269,6 @@
     [self.timerLabel setFontSize:20];
 }
 
--(void)addTracker
-{
-    self.distanceLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(568, 928, 180, 40)];
-    [self.view addSubview:self.distanceLabel];
-    [self.distanceLabel setFontSize:20];
-}
-
 -(void)setupCountdownTimer
 {
     self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
@@ -301,10 +291,23 @@
         NSInteger timeStart = round(intervalStart);
         NSInteger timePassed = timeNow - timeStart;
         NSInteger timeRemaining = 5400 - timePassed;
-        NSInteger minutesRemaining = timeRemaining / 60;
-        NSInteger secondsRemaining = timeRemaining % 60;
-        NSString *countdownString = [NSString stringWithFormat:@"%d:%d mins", minutesRemaining, secondsRemaining];
-        [self.timerLabel assignText:countdownString];
+        
+        if (timeRemaining < 0)
+        {
+            self.timerLabel.backgroundColor = [UIColor redColor];
+            NSInteger timeOver = timeRemaining * -1;
+            NSInteger minutesRemaining = timeOver / 60;
+            NSInteger secondsRemaining = timeOver % 60;
+            NSString *countdownString = [NSString stringWithFormat:@"-%02d:%02d mins", minutesRemaining, secondsRemaining];
+            [self.timerLabel assignText:countdownString];
+        }
+        else
+        {
+            NSInteger minutesRemaining = timeRemaining / 60;
+            NSInteger secondsRemaining = timeRemaining % 60;
+            NSString *countdownString = [NSString stringWithFormat:@"%02d:%02d mins", minutesRemaining, secondsRemaining];
+            [self.timerLabel assignText:countdownString];
+        }
     }
     else
     {
@@ -312,24 +315,21 @@
     }
 }
 
--(void)setupLocationTracker
+-(void)stopLocationTracker
 {
-    if (self.model.locationLat && self.model.locationLng && ![User clueCompleted:self.model.clueNumber])
-    {
-        self.locationTracker = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                                target:self
-                                                              selector:@selector(CurrentLocationIdentifier)
-                                                              userInfo:nil
-                                                               repeats:YES];
-    }
-    
+    [self.locationTracker invalidate];
+    self.locationTracker = nil;
+    self.locationManager = nil;
 }
 
-//-(void)stopLocationTracker
-//{
-//    [self.locationTracker invalidate];
-//    self.locationTracker = nil;
-//}
+-(void)setupLocationTracker
+{
+    self.locationTracker = [NSTimer scheduledTimerWithTimeInterval:3.0
+                                                            target:self
+                                                          selector:@selector(CurrentLocationIdentifier)
+                                                          userInfo:nil
+                                                           repeats:YES];
+}
 
 -(void)CurrentLocationIdentifier
 { self.locationManager = [[LocationTracker alloc] initWithViewController:self]; }
@@ -337,17 +337,39 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     [self.locationManager stopUpdatingLocation];
-    if ([self.locationManager reachedLocationWithLatitude:self.model.locationLat andLongitude:self.model.locationLng])
+    if (self.model.locationLat && self.model.locationLng && ![User clueCompleted:self.model.clueNumber])
     {
-        [self clueCompleteProcess];
-        [self completeClueUI];
+        if ([self.locationManager reachedLocationWithLatitude:self.model.locationLat andLongitude:self.model.locationLng])
+        {
+            [self clueCompleteProcess];
+            [self completeClueUI];
+            [self activateNextTab];
+            [self.clueCompleteAlert show];
+        }
     }
-    
+    [self updateDistanceLabel];
+}
+
+- (void)updateDistanceLabel
+{
     NSString *distanceText = [NSString stringWithFormat:@"%d m", [self.locationManager distanceFromMe]];
     [self.distanceLabel assignText:distanceText];
 }
 
 - (void)clueCompleteProcess
-{ [User completeClue:self.model.clueNumber]; }
+{
+    [User completeClue:self.model.clueNumber];
+}
+
+-(void)setupClueCompleteAlert
+{
+    self.clueCompleteAlert = [[UIAlertView alloc] initWithTitle:@"Made it!" message:self.model.clueCompleteText delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+}
+
+-(void)addTracker
+{
+    self.distanceLabel = [[MarginUILabel alloc]initWithFrame:CGRectMake(568, 928, 180, 40)];
+    [self.distanceLabel setFontSize:20];
+}
 
 @end

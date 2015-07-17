@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LondonAdventure/AdventureViewController.m"
-            timestampString = "458391715.065369"
+            timestampString = "458772792.991876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "-createCompletedUI"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,59 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LondonAdventure/AdventureViewController.m"
-            timestampString = "458363816.09536"
+            timestampString = "458772792.991876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "repeatingClue"
-            landmarkType = "19">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AdventureViewController titleLabel]"
-                  moduleName = "LondonAdventure"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/emmamakinson/Personal/xcode_projects/Adventure/LondonAdventure/LondonAdventure/AdventureViewController.m"
-                  timestampString = "458162228.068722"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "10">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AdventureViewController setTitleLabel:]"
-                  moduleName = "LondonAdventure"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/emmamakinson/Personal/xcode_projects/Adventure/LondonAdventure/LondonAdventure/AdventureViewController.m"
-                  timestampString = "458162228.06894"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "22">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LondonAdventure/AdventureViewController.m"
-            timestampString = "458391715.065369"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274">
+            startingLineNumber = "418"
+            endingLineNumber = "418">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -146,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LondonAdventure/LocationTracker.m"
-            timestampString = "458353048.340039"
+            timestampString = "458422047.718009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "-reachedLocationWithLatitude:andLongitude:"
             landmarkType = "5">
          </BreakpointContent>
@@ -162,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LondonAdventure/AdventureViewController.m"
-            timestampString = "458391715.065369"
+            timestampString = "458772792.991876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295">
+            startingLineNumber = "439"
+            endingLineNumber = "439">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,11 +128,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LondonAdventure/User.m"
-            timestampString = "458354663.569622"
+            timestampString = "458418787.996211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "+addClueToCluesSeen:"
             landmarkType = "5">
          </BreakpointContent>
@@ -192,27 +144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LondonAdventure/AdventureViewController.m"
-            timestampString = "458391715.065369"
+            timestampString = "458772792.991876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LondonAdventure/Clue.m"
-            timestampString = "458385896.277848"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-CurrentLocationIdentifier"
-            landmarkType = "5">
+            startingLineNumber = "383"
+            endingLineNumber = "383">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,11 +174,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LondonAdventure/MarginUILabel.m"
-            timestampString = "458391715.065369"
+            timestampString = "458402140.58797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-setFontSize:"
             landmarkType = "5">
          </BreakpointContent>

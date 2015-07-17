@@ -13,9 +13,9 @@
 -(NSString *)contentText
 {
     
-    NSString *para1 = @"Have you figured it out yet? If so, come and find me! Otherwise, there is one final clue waiting for you at Pass My Parcel, Spar Stores, on Craven Road. It's another lovely little local road, and the walk will take you through plenty more nice green areas with lots of beautiful buildings.";
+    NSString *para1 = @"There is one final clue waiting for you at Pass My Parcel, Spar Stores, 42 Craven Road. It's another lovely little local road, and the walk will take you through plenty more nice green areas with lots of beautiful buildings.";
     NSString *para2 = @"The clue that's waiting for you there should point me in my direction, but there's no need to pick it up if you already have it figured out. I'd much rather you came and canoodled :-)";
-    NSString *para3 = @"As before, you will need to XXXX to get to it: this time with code XXXXX.";
+    NSString *para3 = @"As before, you will need to show them some ID to get it, and this time quote code N9E5LQR.";
     
     return [NSString stringWithFormat:@"%@\r\r%@\r\r%@", para1, para2, para3];
 }
@@ -41,6 +41,11 @@
 - (NSString *)navBarImage
 {
     return @"seven-black.png";
+}
+
+- (NSString *)clueCompleteText
+{
+    return @"No more clues for you! If you're still stuck, you can have a location tracker to tell you how far you are from me. Click the plus button to get it.";
 }
 
 - (NSNumber *)clueNumber

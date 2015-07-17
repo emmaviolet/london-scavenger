@@ -11,5 +11,6 @@
 @interface AdventureTabBarViewController : UITabBarController
 
 -(void)setSelectedIndex:(NSUInteger)selectedIndex;
+-(void)addBonusClue;
 
 @end

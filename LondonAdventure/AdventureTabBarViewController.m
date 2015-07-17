@@ -18,6 +18,14 @@
 #import "User.h"
 
 @interface AdventureTabBarViewController ()
+@property AdventureViewController *viewController0;
+@property AdventureViewController *viewController1;
+@property AdventureViewController *viewController2;
+@property AdventureViewController *viewController3;
+@property AdventureViewController *viewController4;
+@property AdventureViewController *viewController5;
+@property AdventureViewController *viewController6;
+@property AdventureViewController *viewController7;
 @end
 
 @implementation AdventureTabBarViewController
@@ -32,18 +40,26 @@
 
 -(void)instantiateViewControllers
 {
-    AdventureViewController *viewController0 = [self.storyboard instantiateViewControllerWithIdentifier:@"C0"];
+    self.viewController0 = [self.storyboard instantiateViewControllerWithIdentifier:@"C0"];
     
-    AdventureViewController *viewController1 = [[ClueOneViewController alloc] init];
-    AdventureViewController *viewController2 = [[ClueTwoViewController alloc] init];
-    AdventureViewController *viewController3 = [[ClueThreeViewController alloc] init];
+    self.viewController1 = [[ClueOneViewController alloc] init];
+    self.viewController2 = [[ClueTwoViewController alloc] init];
+    self.viewController3 = [[ClueThreeViewController alloc] init];
     
-    AdventureViewController *viewController4 = [[ClueFourViewController alloc] init];
-    AdventureViewController *viewController5 = [[ClueFiveViewController alloc] init];
-    AdventureViewController *viewController6 = [[ClueSixViewController alloc] init];
-    AdventureViewController *viewController7 = [[ClueSevenViewController alloc] init];
+    self.viewController4 = [[ClueFourViewController alloc] init];
+    self.viewController5 = [[ClueFiveViewController alloc] init];
+    self.viewController6 = [[ClueSixViewController alloc] init];
+    self.viewController7 = [[ClueSevenViewController alloc] init];
     
-    self.viewControllers = [ NSArray arrayWithObjects:viewController0, viewController1, viewController2, viewController3, viewController4, viewController5, viewController6, nil];
+    if ([User bonusClueActive])
+    {
+        self.viewControllers = [ NSArray arrayWithObjects:self.viewController0, self.viewController1, self.viewController2, self.viewController3, self.viewController4, self.viewController5, self.viewController6, self.viewController7, nil];
+    }
+    else
+    {
+        self.viewControllers = [ NSArray arrayWithObjects:self.viewController0, self.viewController1, self.viewController2, self.viewController3, self.viewController4, self.viewController5, self.viewController6, nil];
+    }
+    
 }
 
 -(void)setTabsByState

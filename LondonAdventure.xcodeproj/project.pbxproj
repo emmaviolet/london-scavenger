@@ -11,6 +11,8 @@
 		462F459D1B4ECD1D00D5581F /* AdventureTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462F459C1B4ECD1D00D5581F /* AdventureTabBarViewController.m */; };
 		466476D21B4D94560005DEF6 /* CoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466476D11B4D94560005DEF6 /* CoverViewController.m */; };
 		466476D51B4D97C40005DEF6 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466476D41B4D97C40005DEF6 /* IntroductionViewController.m */; };
+		46780BAB1B52A03700042355 /* MarginUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46780BAA1B52A03700042355 /* MarginUIImageView.m */; };
+		46780BAE1B52B48F00042355 /* ScaledImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 46780BAD1B52B48F00042355 /* ScaledImage.m */; };
 		4694B2C01B51F7EB0053C3FE /* Clue0.m in Sources */ = {isa = PBXBuildFile; fileRef = 4694B2BF1B51F7EB0053C3FE /* Clue0.m */; };
 		4694B2C31B51F7F70053C3FE /* Clue1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4694B2C21B51F7F70053C3FE /* Clue1.m */; };
 		4694B2C61B51F8030053C3FE /* Clue2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4694B2C51B51F8030053C3FE /* Clue2.m */; };
@@ -36,9 +38,11 @@
 		46D7BAD41B51F2F700AEA071 /* ClueHelpAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D7BAD31B51F2F700AEA071 /* ClueHelpAlertView.m */; };
 		46D7BAD71B51F5B900AEA071 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D7BAD61B51F5B900AEA071 /* Clue.m */; };
 		46E694851B51EAA90002981F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E694841B51EAA90002981F /* User.m */; };
+		E4C1F3972D8E07EC4391A646 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D956E504CEF19C891337AA /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		176795D4EE5CF038390FDA13 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "LondonAdventure/Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		461A5EE51B51E06B0084EEED /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
 		461A5EE61B51E06B0084EEED /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
 		462F459B1B4ECD1D00D5581F /* AdventureTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdventureTabBarViewController.h; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		466476D11B4D94560005DEF6 /* CoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverViewController.m; sourceTree = "<group>"; };
 		466476D31B4D97C40005DEF6 /* IntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionViewController.h; sourceTree = "<group>"; };
 		466476D41B4D97C40005DEF6 /* IntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionViewController.m; sourceTree = "<group>"; };
+		46780BA91B52A03700042355 /* MarginUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarginUIImageView.h; sourceTree = "<group>"; };
+		46780BAA1B52A03700042355 /* MarginUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarginUIImageView.m; sourceTree = "<group>"; };
+		46780BAC1B52B48F00042355 /* ScaledImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledImage.h; sourceTree = "<group>"; };
+		46780BAD1B52B48F00042355 /* ScaledImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledImage.m; sourceTree = "<group>"; };
 		4694B2BE1B51F7EB0053C3FE /* Clue0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue0.h; sourceTree = "<group>"; };
 		4694B2BF1B51F7EB0053C3FE /* Clue0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue0.m; sourceTree = "<group>"; };
 		4694B2C11B51F7F70053C3FE /* Clue1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue1.h; sourceTree = "<group>"; };
@@ -95,6 +103,8 @@
 		46D7BAD61B51F5B900AEA071 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
 		46E694831B51EAA90002981F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		46E694841B51EAA90002981F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		57D956E504CEF19C891337AA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FA223C7C669671415E34F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "LondonAdventure/Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +112,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C1F3972D8E07EC4391A646 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FB5C1E51B36FD01CD85FA3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57D956E504CEF19C891337AA /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		461A5EE41B51E04F0084EEED /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +165,6 @@
 				466476D41B4D97C40005DEF6 /* IntroductionViewController.m */,
 				46B97D2B1B4D7AFD00C8367E /* ClueOneViewController.h */,
 				46B97D2C1B4D7AFD00C8367E /* ClueOneViewController.m */,
-				46B97D251B4D717500C8367E /* ClueSevenViewController.h */,
-				46B97D261B4D717500C8367E /* ClueSevenViewController.m */,
 				46B97D311B4D7B2500C8367E /* ClueTwoViewController.h */,
 				46B97D321B4D7B2500C8367E /* ClueTwoViewController.m */,
 				46B97D341B4D7B3300C8367E /* ClueThreeViewController.h */,
@@ -158,6 +175,8 @@
 				46B97D3B1B4D7BB200C8367E /* ClueFiveViewController.m */,
 				46B97D3D1B4D7BBF00C8367E /* ClueSixViewController.h */,
 				46B97D3E1B4D7BBF00C8367E /* ClueSixViewController.m */,
+				46B97D251B4D717500C8367E /* ClueSevenViewController.h */,
+				46B97D261B4D717500C8367E /* ClueSevenViewController.m */,
 			);
 			name = Clues;
 			sourceTree = "<group>";
@@ -169,6 +188,10 @@
 				46ACC1631B4D85290018B77B /* MarginUILabel.m */,
 				46D7BAD21B51F2F700AEA071 /* ClueHelpAlertView.h */,
 				46D7BAD31B51F2F700AEA071 /* ClueHelpAlertView.m */,
+				46780BA91B52A03700042355 /* MarginUIImageView.h */,
+				46780BAA1B52A03700042355 /* MarginUIImageView.m */,
+				46780BAC1B52B48F00042355 /* ScaledImage.h */,
+				46780BAD1B52B48F00042355 /* ScaledImage.m */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -189,6 +212,8 @@
 			children = (
 				46B97D071B4C5BE000C8367E /* LondonAdventure */,
 				46B97D061B4C5BE000C8367E /* Products */,
+				B87A2D699A679F1872F23B07 /* Pods */,
+				0FB5C1E51B36FD01CD85FA3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +251,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B87A2D699A679F1872F23B07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				176795D4EE5CF038390FDA13 /* Pods.debug.xcconfig */,
+				C1FA223C7C669671415E34F1 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,9 +267,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46B97D1F1B4C5BE000C8367E /* Build configuration list for PBXNativeTarget "LondonAdventure" */;
 			buildPhases = (
+				3E2EC7CB2290578439A4C234 /* Check Pods Manifest.lock */,
 				46B97D011B4C5BE000C8367E /* Sources */,
 				46B97D021B4C5BE000C8367E /* Frameworks */,
 				46B97D031B4C5BE000C8367E /* Resources */,
+				24715752D79DC29C5557FFFB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +328,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24715752D79DC29C5557FFFB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/LondonAdventure/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E2EC7CB2290578439A4C234 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		46B97D011B4C5BE000C8367E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -304,10 +373,12 @@
 				462F459D1B4ECD1D00D5581F /* AdventureTabBarViewController.m in Sources */,
 				46B97D331B4D7B2500C8367E /* ClueTwoViewController.m in Sources */,
 				46D7BAD41B51F2F700AEA071 /* ClueHelpAlertView.m in Sources */,
+				46780BAE1B52B48F00042355 /* ScaledImage.m in Sources */,
 				4694B2C91B51F80F0053C3FE /* Clue3.m in Sources */,
 				46B97D0D1B4C5BE000C8367E /* AppDelegate.m in Sources */,
 				46B97D0A1B4C5BE000C8367E /* main.m in Sources */,
 				46B97D391B4D7BA200C8367E /* ClueFourViewController.m in Sources */,
+				46780BAB1B52A03700042355 /* MarginUIImageView.m in Sources */,
 				46E694851B51EAA90002981F /* User.m in Sources */,
 				466476D51B4D97C40005DEF6 /* IntroductionViewController.m in Sources */,
 				46B97D361B4D7B3300C8367E /* ClueThreeViewController.m in Sources */,
@@ -432,6 +503,7 @@
 		};
 		46B97D201B4C5BE000C8367E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 176795D4EE5CF038390FDA13 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -445,6 +517,7 @@
 		};
 		46B97D211B4C5BE000C8367E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1FA223C7C669671415E34F1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

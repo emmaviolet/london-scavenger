@@ -17,8 +17,8 @@
 @implementation IntroductionViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     [self insertGetStarted];
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,16 +88,25 @@
 {
     NSString *domainName = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:domainName];
-    [self.tabBarController viewDidLoad];
+    for (AdventureViewController *viewController in self.tabBarController.viewControllers)
+    { [viewController stopLocationTracker]; }
     
-//    for (AdventureViewController *viewController in self.tabBarController.viewControllers)
-//    { [viewController.model stopLocationTracker]; }
+    [self.tabBarController viewDidLoad];
+}
+
+- (void)completeClueUI
+{
+    [self.getStartedButton removeFromSuperview];
+}
+
+- (void)incompleteClueUI
+{
+    [self.view addSubview:self.getStartedButton];
 }
 
 - (void)addGoogleMap {}
 - (void)createHelpViews {}
-- (void)completeClueUI {}
-- (void)incompleteClueUI {}
 - (void)loadHelpView {}
+- (void)setupClueCompleteAlert {}
 
 @end
